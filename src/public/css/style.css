@@ -1,0 +1,407 @@
+body {
+  padding: 0;
+  margin: 0;
+  background-color: rgb(51, 51, 51);
+  font-family: "MutatorSans", sans-serif;
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.installedGame_header,
+.playLaterGame_header,
+.wishlist_header {
+  color: #fff;
+  background-color: rgb(119, 136, 153);
+  text-align: center;
+  box-shadow: 5px 5px 5px 0px #000;
+}
+
+.installedGame_header,
+.playLaterGame_header,
+.wishlist_header,
+.uploadModalNewGame_inputs_header,
+.uploadModalNewGame_playOrEdit_header {
+  text-shadow: 2px 3px black;
+}
+
+.installedGame_images,
+.playLaterGame_images,
+.wishlist_images {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.installedGame_image,
+.playLaterGame_image,
+.wishlist_image {
+  width: 300px;
+  height: 150px;
+  max-width: 100%;
+  cursor: pointer;
+  border-radius: 20px;
+}
+
+.installedGame_image:hover,
+.playLaterGame_image:hover,
+.wishlist_image:hover {
+  box-shadow: 2px 4px 10px 4px white;
+}
+
+.installedGame_header,
+.playLaterGame_header,
+.wishlist_header,
+.installedGame_image,
+.playLaterGame_image,
+.wishlist_image {
+  padding: 5px;
+}
+
+.installedGame_newGame,
+.installedGame_playLater,
+.installedGame_wishlist {
+  background-color: #789;
+  padding: 0;
+  margin: 5px 0;
+  cursor: pointer;
+}
+
+.modal-root .addGame {
+  display: block;
+  top: 25vh;
+}
+
+.modal-root .editGame {
+  display: block;
+  top: 35vh;
+}
+
+.modal-root .playOrEdit {
+}
+
+.hide,
+.addGame .uploadModalNewGame_inputs_editBtns,
+.editGame .uploadModalNewGame_inputs_chooseCoverArt,
+.editGame .uploadBtn,
+.editGame .uploadModalNewGame_playOrEdit,
+.addGame .uploadModalNewGame_playOrEdit,
+.uploadModalNewGame,
+.playOrEdit .uploadModalNewGame_form {
+  display: none;
+}
+
+.show,
+.addGame .uploadModalNewGame_inputs_chooseCoverArt,
+.addGame .uploadBtn,
+.editGame .uploadModalNewGame_inputs_editBtns {
+  display: block;
+}
+
+.playOrEdit .uploadModalNewGame_playOrEdit {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.uploadModalNewGame {
+  width: 300px;
+  height: 125px;
+  position: fixed;
+  top: 45vh;
+  left: 50%;
+  right: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.uploadModalNewGame_form,
+.uploadModalNewGame_playOrEdit {
+  border: 1px #333 solid;
+  background-color: #789;
+  box-shadow: 5px 5px 5px 0px #000;
+  border-radius: 10px;
+}
+
+.uploadModalNewGame_inputs__closeBtn,
+.rightLogoArrowBtn,
+.leftLogoArrowBtn {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  position: fixed;
+  top: -20px;
+  right: -15px;
+  border-radius: 35px;
+  width: 35px;
+  height: 35px;
+  background-color: #304fad;
+  cursor: pointer;
+  box-shadow: 5px 5px 5px 0px #000;
+  border: none;
+}
+
+.rightLogoArrowBtn {
+  position: relative;
+  top: -10px;
+  left: -40px;
+}
+
+.rightLogoArrowBtn img {
+  transform: none;
+  height: 22px;
+  position: relative;
+  top: 6px;
+  left: 1px;
+}
+
+.leftLogoArrowBtn {
+  position: relative;
+  top: -10px;
+  left: 33px;
+}
+
+.leftLogoArrowBtn img {
+  transform: rotate(-180deg);
+  height: 22px;
+  position: relative;
+  top: 6px;
+  left: 1px;
+}
+
+.uploadModalNewGame_inputs__closeBtn__img {
+  transform: rotate(45deg);
+  height: 100%;
+}
+
+.logoSearchImg {
+  width: 95%;
+}
+
+.logoSearchImg:hover {
+  box-shadow: none;
+}
+
+.noLogoResults {
+  color: #fff;
+  text-transform: uppercase;
+  width: 90%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.uploadModalNewGame_inputs_logos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.uploadModalNewGame_inputs {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.uploadModalNewGame_inputs label,
+.uploadModalNewGame_inputs input {
+  margin: 10px;
+}
+
+.uploadModalNewGame_inputs .uploadBtn,
+.uploadModalNewGame_inputs_logosSearchBtn,
+.uploadModalNewGame_inputs_styledFileBtn,
+.uploadModalNewGame_inputs_styledAppPathBtn,
+.uploadModalNewGame_playOrEdit_play,
+.uploadModalNewGame_playOrEdit_edit {
+  width: 50%;
+  margin: 10px auto;
+}
+
+.uploadModalNewGame_playOrEdit_play {
+  background-color: transparent;
+}
+
+.uploadModalNewGame_inputs_styledAppPathBtn {
+  margin: 20px auto 10px auto;
+}
+
+.uploadModalNewGame_inputs_logosSearchBtn,
+.uploadModalNewGame_inputs_styledFileBtn,
+.uploadModalNewGame_inputs_styledAppPathBtn,
+.uploadModalNewGame_playOrEdit_edit {
+  background-color: #304fad;
+}
+
+.uploadModalNewGame_inputs_header,
+.uploadModalNewGame_playOrEdit_header,
+.uploadModalNewGame_inputs label {
+  color: white;
+}
+
+.uploadModalNewGame_inputs_header,
+.uploadModalNewGame_playOrEdit_header {
+  font-size: 1.3em;
+  margin: 15px 0 10px 0;
+}
+
+.uploadModalNewGame_inputs,
+.uploadModalNewGame_playOrEdit_header {
+  text-align: center;
+}
+
+.uploadModalNewGame_inputs_chooseCoverArt {
+  margin: 10px 0;
+}
+
+.blackOverlay {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  background-color: #000000ba;
+}
+
+.uploadModalNewGame_inputs_platformSelectBx,
+.uploadModalNewGame_inputs_categorySelectBx,
+.uploadModalNewGame_inputs_nameTxt,
+.uploadModalNewGame_inputs_appPath_nameTxt {
+  width: 85%;
+  align-self: center;
+}
+
+.uploadModalNewGame_inputs .uploadModalNewGame_inputs_nameTxt,
+.uploadModalNewGame_inputs .uploadModalNewGame_inputs_appPath_nameTxt {
+  margin: 0px;
+}
+
+.uploadModalNewGame_inputs .uploadModalNewGame_inputs_fileBtn,
+.uploadModalNewGame_inputs_appPath_fileBtn {
+  display: none;
+  margin: 10px 20px 20px 20px;
+}
+
+.uploadModalNewGame_inputs_editBtns {
+  display: none;
+  margin: 20px 0;
+}
+
+.uploadModalNewGame_inputs_editBtns_deleteBtn,
+.uploadModalNewGame_inputs_editBtns_updateBtn {
+  width: 35%;
+  margin: 10px;
+}
+
+.uploadModalNewGame_inputs_editBtns_deleteBtn,
+.uploadModalNewGame_inputs_editBtns_updateBtn,
+.uploadModalNewGame_inputs_logosSearchBtn,
+.uploadBtn,
+.uploadModalNewGame_inputs_styledFileBtn,
+.uploadModalNewGame_inputs_styledAppPathBtn,
+.uploadModalNewGame_playOrEdit_play,
+.uploadModalNewGame_playOrEdit_edit {
+  border: none;
+  color: #fff;
+  padding: 10px;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 20px;
+}
+
+.uploadModalNewGame_inputs_editBtns_updateBtn,
+.uploadModalNewGame_inputs .uploadBtn {
+  background-color: green;
+}
+
+.uploadModalNewGame_inputs_editBtns_deleteBtn {
+  background-color: red;
+}
+
+.uploadModalNewGame_inputs_appPath_nameTxt {
+  background-color: #cdd2d7;
+  border: none;
+}
+
+.uploadModalNewGame_inputs_appPath {
+  display: flex;
+  flex-direction: column;
+}
+
+.error {
+  border: red 4px solid;
+}
+
+.addNewGame {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  border-radius: 100px;
+  width: 100px;
+  height: 100px;
+  background-color: #304fad;
+  cursor: pointer;
+  box-shadow: 5px 5px 5px 0px #000;
+  border: none;
+}
+
+.addNewGame__img {
+  height: 100%;
+}
+
+.addNewGameNoData {
+  left: 50%;
+  right: 50%;
+  transform: translate(-50%, -50%);
+  bottom: 50vh;
+}
+
+.addNewGameDataHeader {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  position: fixed;
+  left: 50%;
+  right: 50%;
+  transform: translate(-50%, -50%);
+  bottom: 70vh;
+  color: #fff;
+  width: 80vw;
+  text-shadow: 5px 5px black;
+  font-size: 3em;
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px #0000004d;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px #000000ba;
+}
+
+circle:nth-of-type(1) {
+  fill: #ffffff;
+}
+circle:nth-of-type(2) {
+  fill: #fcd837;
+}
+circle:nth-of-type(3) {
+  fill: #f9a11f;
+}
+circle:nth-of-type(4) {
+  fill: #f27c21;
+}
+
+.clackers {
+  margin: 0 0 25px 0;
+}
