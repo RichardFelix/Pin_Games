@@ -33,7 +33,7 @@ Windows 10+ \
 
 ![App with no games added](https://github.com/RichardFelix/Pin_Games/blob/main/ReadME_images/pinGames_noGames.png?raw=true)
 
-### Modal with all required fields to add a new game. Either search Steam for cover or upload your own.
+### Modal with all required fields to add a new game (App Location is not required can be left blank). Either search Steam for cover or upload your own.
 
 ![App modal to add games](https://github.com/RichardFelix/Pin_Games/blob/main/ReadME_images/pinGames_addNewGames.png?raw=true)
 
