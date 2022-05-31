@@ -1,8 +1,8 @@
 # Summary
 
-I created a simple app to catalog your games you have installed, want to play later and are on your wishlist. Also stores what launcher game is connected to, so you will never forget again ;-).
+Launch and catalog your games. All in one place as it should be :-). Catalog your games you have installed, want to play later and are on your wishlist. Also stores what launcher game is connected to, so you will never forget again ;-).
 
-![App with a bunch of games added](https://github.com/RichardFelix/Pin_Games/blob/main/ReadME_images/default.png?raw=true)
+![App with a bunch of games added](https://github.com/RichardFelix/Pin_Games/blob/main/ReadME_images/mainImage.png?raw=true)
 
 # Tools and Technology used
 
@@ -31,15 +31,19 @@ Windows 10+ \
 
 ### Hit the plus button to add your games.
 
-![App with no games added](https://github.com/RichardFelix/Pin_Games/blob/main/ReadME_images/addSomeGames1.png?raw=true)
+![App with no games added](https://github.com/RichardFelix/Pin_Games/blob/main/ReadME_images/pinGames_noGames.png?raw=true)
 
 ### Modal with all required fields to add a new game. Either search Steam for cover or upload your own.
 
-![App modal to add games](https://github.com/RichardFelix/Pin_Games/blob/main/ReadME_images/pinGames_addNewGames1.png?raw=true)
+![App modal to add games](https://github.com/RichardFelix/Pin_Games/blob/main/ReadME_images/pinGames_addNewGames.png?raw=true)
 
 ### Click on any game and pop open the update / delete modal.
 
-![App modal to update or delete games](https://github.com/RichardFelix/Pin_Games/blob/main/ReadME_images/pinGames_updateGame1.png?raw=true)
+![App modal to update or delete games](https://github.com/RichardFelix/Pin_Games/blob/main/ReadME_images/pinGames_updateGame.png?raw=true)
+
+### Click on any game and pop open the play / edit modal if you have a application location saved for that game.
+
+![Launch or Edit your Game](https://github.com/RichardFelix/Pin_Games/blob/main/ReadME_images/PlayOrEdit.png?raw=true)
 
 # Nerd Info
 
