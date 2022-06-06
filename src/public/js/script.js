@@ -2,6 +2,7 @@
 //          Constants
 //////////////////////////////////////////
 const CONSTANTS_ENUM = Object.freeze({
+  MAIN_DIV: document.getElementById("main"),
   BLACK_OVERLAY: document.getElementById("blackOverlay"),
   UPLOAD_MODAL_NEWGAME: document.getElementById("uploadModalNewGame"),
   NAME_TXT: document.getElementById("uploadModalNewGame_inputs_nameTxt"),
@@ -23,6 +24,7 @@ const CONSTANTS_ENUM = Object.freeze({
   COVER_ART: document.getElementById("uploadModalNewGame_inputs_logos"),
   FILE_BTN: document.getElementById("uploadModalNewGame_inputs_fileBtn"),
   ADD_BTN: document.getElementById("addNewGame"),
+  ADD_BTN_DIV: document.getElementById("addNewBtn-root"),
   CLOSE_BTN: document.getElementById("uploadModalNewGame_inputs__closeBtn"),
   STYLED_FILE_BTN: document.getElementById(
     "uploadModalNewGame_inputs_styledFileBtn"
@@ -107,6 +109,8 @@ function openModal() {
   CONSTANTS_ENUM.UPLOAD_MODAL_NEWGAME.classList.add("addGame");
   CONSTANTS_ENUM.UPLOAD_MODAL_NEWGAME.classList.remove("editGame");
   CONSTANTS_ENUM.UPLOAD_MODAL_NEWGAME.classList.remove("playOrEdit");
+  CONSTANTS_ENUM.MAIN_DIV.classList.add("hide");
+  CONSTANTS_ENUM.ADD_BTN_DIV.classList.add("hide");
   CONSTANTS_ENUM.COVER_ART_DIV.classList.remove("error");
   CONSTANTS_ENUM.NAME_TXT.classList.remove("error");
   CONSTANTS_ENUM.BLACK_OVERLAY.classList.remove("hide");
@@ -116,8 +120,7 @@ function openModal() {
   CONSTANTS_ENUM.NAME_TXT.value = "";
   CONSTANTS_ENUM.PLATFORM_SELECTBX.selectedIndex = 0;
   CONSTANTS_ENUM.CATEGORY_SELCECTBX.selectedIndex = 0;
-  CONSTANTS_ENUM.NAME_TXT.focus();
-  CONSTANTS_ENUM.ADD_BTN.setAttribute("tabindex", "-1");
+  CONSTANTS_ENUM.HEADER.focus();
   CONSTANTS_ENUM.APP_NAME_TXT.value = ``;
   searchLogoArr = [];
 }
@@ -127,11 +130,12 @@ async function openEditModal(name) {
   CONSTANTS_ENUM.UPLOAD_MODAL_NEWGAME.classList.add("editGame");
   CONSTANTS_ENUM.UPLOAD_MODAL_NEWGAME.classList.remove("addGame");
   CONSTANTS_ENUM.UPLOAD_MODAL_NEWGAME.classList.remove("playOrEdit");
+  CONSTANTS_ENUM.MAIN_DIV.classList.add("hide");
+  CONSTANTS_ENUM.ADD_BTN_DIV.classList.add("hide");
   CONSTANTS_ENUM.NAME_TXT.classList.remove("error");
   CONSTANTS_ENUM.BLACK_OVERLAY.classList.remove("hide");
   CONSTANTS_ENUM.HEADER.innerText = "Edit Game";
-  CONSTANTS_ENUM.NAME_TXT.focus();
-  CONSTANTS_ENUM.ADD_BTN.setAttribute("tabindex", "-1");
+  CONSTANTS_ENUM.HEADER.focus();
 
   updateItemName = name;
 
@@ -288,7 +292,8 @@ CONSTANTS_ENUM.CLOSE_BTN.addEventListener("click", () => {
   CONSTANTS_ENUM.BLACK_OVERLAY.classList.add("hide");
   CONSTANTS_ENUM.UPLOAD_MODAL_NEWGAME.classList.remove("addGame");
   CONSTANTS_ENUM.UPLOAD_MODAL_NEWGAME.classList.remove("editGame");
-  CONSTANTS_ENUM.ADD_BTN.setAttribute("tabindex", "0");
+  CONSTANTS_ENUM.MAIN_DIV.classList.remove("hide");
+  CONSTANTS_ENUM.ADD_BTN_DIV.classList.remove("hide");
 });
 
 // esc button closes modal

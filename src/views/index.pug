@@ -46,24 +46,24 @@ block body
                         button(id="uploadModalNewGame_inputs_editBtns_deleteBtn" class="uploadModalNewGame_inputs_editBtns_deleteBtn" type="submit" value="DELETE") Delete
                         button(id="uploadModalNewGame_inputs_editBtns_updateBtn" class="uploadModalNewGame_inputs_editBtns_updateBtn" type="submit" value="UPDATE") Update
                     button(id="uploadBtn" class="uploadBtn" type="submit" value="Upload") Save
-    div.main        
+    div#main.main        
         if installedArr.length > 0            
             section.installedGame
                 h1.installedGame_header Installed
                 div.installedGame_images
                     each item in installedArr
-                        img(id=`${item.name}` class="installedGame_image src" src=`${item.imageLocation}` alt=`${item.name}` title=`${item.platform}` onClick=`openEditModal("${item.name}")`)
+                        button(id=`${item.name}` class="installedGame_image" style=`background: url('${item.imageLocation}') no-repeat; background-size: 100% 100%;')` alt=`${item.name}` title=`${item.platform}` onClick=`openEditModal("${item.name}")`)
 
         if playLaterArr.length > 0
             section.playLaterGame
                 h1.playLaterGame_header Play Later
                 div.playLaterGame_images
                     each item in playLaterArr
-                        img(id=`${item.name}` class="playLaterGame_image src" src=`${item.imageLocation}` alt=`${item.name}` title=`${item.platform}` onClick=`openEditModal("${item.name}")`)
+                        button(id=`${item.name}` class="playLaterGame_image" style=`background: url('${item.imageLocation}') no-repeat; background-size: 100% 100%;` alt=`${item.name}` title=`${item.platform}` onClick=`openEditModal("${item.name}")`)
 
         if wishlistArr.length > 0
             section.wishlist
                 h1.wishlist_header Wishlist
                 div.wishlist_images
                     each item in wishlistArr
-                        img(id=`${item.name}` class="wishlist_image src" src=`${item.imageLocation}` alt=`${item.name}` title=`${item.platform}` onClick=`openEditModal("${item.name}")`)
+                        button(id=`${item.name}` class="wishlist_image" style=`background: url('${item.imageLocation}') no-repeat; background-size: 100% 100%;` alt=`${item.name}` title=`${item.platform}` onClick=`openEditModal("${item.name}")`)
