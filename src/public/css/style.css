@@ -44,6 +44,7 @@ body {
   max-width: 100%;
   cursor: pointer;
   border-radius: 20px;
+  margin: 5px;
 }
 
 .installedGame_image:hover,
@@ -54,10 +55,7 @@ body {
 
 .installedGame_header,
 .playLaterGame_header,
-.wishlist_header,
-.installedGame_image,
-.playLaterGame_image,
-.wishlist_image {
+.wishlist_header {
   padding: 5px;
 }
 
@@ -261,7 +259,23 @@ body {
   width: 100vw;
   height: 100vh;
   position: fixed;
-  background-color: #000000ba;
+  background-color: #00000080;
+}
+
+.uploadModalNewGame_inputs_appPath_div {
+  display: flex;
+  width: 85%;
+  margin: 0 auto;
+}
+
+.uploadModalNewGame_inputs_appPath_clearBtn {
+  border: none;
+  color: #fff;
+  padding: 8px;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 5px;
+  background-color: #304fad;
 }
 
 .uploadModalNewGame_inputs_platformSelectBx,
@@ -322,6 +336,7 @@ body {
 .uploadModalNewGame_inputs_appPath_nameTxt {
   background-color: #cdd2d7;
   border: none;
+  padding: 8px;
 }
 
 .uploadModalNewGame_inputs_appPath {
