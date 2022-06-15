@@ -44,7 +44,6 @@ body {
   max-width: 100%;
   cursor: pointer;
   border-radius: 20px;
-  margin: 5px;
 }
 
 .installedGame_image:hover,
@@ -55,7 +54,10 @@ body {
 
 .installedGame_header,
 .playLaterGame_header,
-.wishlist_header {
+.wishlist_header,
+.installedGame_image,
+.playLaterGame_image,
+.wishlist_image {
   padding: 5px;
 }
 
