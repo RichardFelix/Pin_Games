@@ -38,6 +38,9 @@ const CONSTANTS_ENUM = Object.freeze({
   APP_NAME_TXT: document.getElementById(
     "uploadModalNewGame_inputs_appPath_nameTxt"
   ),
+  APP_NAME_TXT_CLEAR_BTN: document.getElementById(
+    "uploadModalNewGame_inputs_appPath_clearBtn"
+  ),
   UPDATE_BTN: document.getElementById(
     "uploadModalNewGame_inputs_editBtns_updateBtn"
   ),
@@ -400,3 +403,8 @@ CONSTANTS_ENUM.PLAY_BTN.addEventListener("click", async () => {
 
 // add svg to play button
 CONSTANTS_ENUM.PLAY_BTN.innerHTML = CONSTANTS_ENUM.PLAY_SVG_PATH;
+
+CONSTANTS_ENUM.APP_NAME_TXT_CLEAR_BTN.addEventListener("click", (e) => {
+  e.preventDefault();
+  CONSTANTS_ENUM.APP_NAME_TXT.value = "";
+});

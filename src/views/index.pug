@@ -39,7 +39,9 @@ block body
                         input(id="uploadModalNewGame_inputs_fileBtn" class="uploadModalNewGame_inputs_fileBtn" type="file" name="newGameImage")
                     div#uploadModalNewGame_inputs_appPath.uploadModalNewGame_inputs_appPath
                         label(class="uploadModalNewGame_inputs_appPath_name" for="uploadModalNewGame_inputs_appPath_nameTxt") App Location
-                        input(id="uploadModalNewGame_inputs_appPath_nameTxt" class="uploadModalNewGame_inputs_appPath_nameTxt" type="text" name="path" readonly="readonly")
+                        div#uploadModalNewGame_inputs_appPath_div.uploadModalNewGame_inputs_appPath_div
+                            input(id="uploadModalNewGame_inputs_appPath_nameTxt" class="uploadModalNewGame_inputs_appPath_nameTxt" type="text" name="path" readonly="readonly")
+                            button#uploadModalNewGame_inputs_appPath_clearBtn.uploadModalNewGame_inputs_appPath_clearBtn Clear
                         button#uploadModalNewGame_inputs_styledAppPathBtn.uploadModalNewGame_inputs_styledAppPathBtn App Location
                         input(id="uploadModalNewGame_inputs_appPath_fileBtn" class="uploadModalNewGame_inputs_appPath_fileBtn" type="file")
                     div#uploadModalNewGame_inputs_editBtns.uploadModalNewGame_inputs_editBtns
