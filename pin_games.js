@@ -8,7 +8,6 @@ const PATH = require("path");
 const MUTLER = require("multer");
 const PORT = process.env.PORT || 3569;
 const AXIOS = require("axios");
-const STEAMIDJSONDATA = require("./data/steamIds.js");
 const BODY_PARSER = require("body-parser");
 const CATEGORY = ["installed", "play_later", "wishlist"];
 const PLATFORMS = [
@@ -24,11 +23,14 @@ const PLATFORMS = [
 const { app, shell } = require("electron");
 const USERDATA = app.getPath("userData");
 let data = {};
+let steamIds = {};
 
 /*********************************
      Read or Create Data File
 *********************************/
 try {
+  updateSteamIds();
+
   data = JSON.parse(
     FS.readFileSync(PATH.join(USERDATA + `/data.json`), "utf-8")
   );
@@ -79,12 +81,32 @@ let upload = MUTLER({ storage: storage });
 /****************************
      Steam Logo Functions
 ****************************/
-/// get all Steam Games
-// http://api.steampowered.com/ISteamApps/GetAppList/v0002/?format=json
+async function updateSteamIds() {
+  steamIds = await getSteamData();
+  FS.writeFileSync(
+    PATH.join(USERDATA + `/steamIds.json`),
+    `${JSON.stringify(steamIds)}`
+  );
+  console.log("steamIds.json Created");
+}
+
+function getSteamData() {
+  return AXIOS({
+    method: "get",
+    url: `https://api.steampowered.com/ISteamApps/GetAppList/v0002/?format=json`,
+  })
+    .then((response) => {
+      return response.data;
+    })
+    .catch((err) => {
+      console.log(`Get Steam Data Failed - ${err}`);
+      return "NOTHING";
+    });
+}
 
 function getSteamIDByName(name) {
   return new Promise((resolve, reject) => {
-    let games = STEAMIDJSONDATA.applist.apps.filter(
+    let games = steamIds.applist.apps.filter(
       (item) => item.name.toLowerCase().match(name) !== null
     );
 
