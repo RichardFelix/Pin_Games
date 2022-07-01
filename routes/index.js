@@ -149,7 +149,7 @@ module.exports = (
     let newData = {
       id: Math.floor(Math.random() * 1000000),
       name: req.body.name,
-      imageLocation: `\\${req.body.name}.jpg`,
+      imageLocation: `${req.body.name}.jpg`,
       platform: req.body.platform,
       category: req.body.category,
       path: req.body.path,

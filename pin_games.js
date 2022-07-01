@@ -83,11 +83,7 @@ let upload = MUTLER({ storage: storage });
 ****************************/
 async function updateSteamIds() {
   steamIds = await getSteamData();
-  FS.writeFileSync(
-    PATH.join(USERDATA + `/steamIds.json`),
-    `${JSON.stringify(steamIds)}`
-  );
-  console.log("steamIds.json Created");
+  console.log(`steamIds list retrieved`);
 }
 
 function getSteamData() {
