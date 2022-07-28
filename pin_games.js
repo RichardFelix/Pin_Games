@@ -89,7 +89,7 @@ async function updateSteamIds() {
 function getSteamData() {
   return AXIOS({
     method: "get",
-    url: `https://api.steampowered.com/ISteamApps/GetAppList/v0002/?format=json`,
+    url: `https://api.steampowered.com/ISteamApps/GetAppList/v2/?format=json`,
   })
     .then((response) => {
       return response.data;
