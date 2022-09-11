@@ -12,12 +12,13 @@ const BODY_PARSER = require("body-parser");
 const CATEGORY = ["installed", "play_later", "wishlist"];
 const PLATFORMS = [
   "Steam",
-  "Origin",
+  "EA",
   "Epic",
-  "Battle.net",
+  "Blizzard",
   "Xbox",
-  "Uplay",
+  "Ubisoft",
   "GoG",
+  "Nintendo Switch",
   "Custom Launcher",
 ];
 const { app, shell } = require("electron");
