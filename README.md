@@ -27,6 +27,9 @@ Windows 10+ \
 3. Install Application
 4. Profit?!?!?!?
 
+# Web Component Layout
+![Web Component Layout](https://github.com/RichardFelix/Pin_Games/blob/main/ReadME_images/html.png?raw=true)
+
 # Walkthrough
 
 ### Hit the plus button to add your games.
