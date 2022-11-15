@@ -7,7 +7,9 @@ module.exports = (
   writeDataToFile,
   findSteamLogos,
   downloadSteamImage,
-  shell
+  shell,
+  FS,
+  PATH
 ) => {
   /****************************
         Sort by Name Function
@@ -52,6 +54,7 @@ module.exports = (
       wishlistArr: wishlistArr,
       PLATFORMS: PLATFORMS,
       CATEGORY: CATEGORY,
+      dataJson: data.items,
     });
   });
 
@@ -167,6 +170,17 @@ module.exports = (
   ************************/
   APP.get("/openPath/:name", (req, res) => {
     shell.openPath(`${req.params.name}`);
+    res.sendStatus(200);
+  });
+
+  /*************************
+       Create Data File
+  *************************/
+  APP.get("/saveData/:path", (req, res) => {
+    FS.writeFileSync(
+      PATH.join(`${req.params.path}/pin_games_backup_data_${Date.now()}.json`),
+      `${JSON.stringify(data.items)}`
+    );
     res.sendStatus(200);
   });
 };

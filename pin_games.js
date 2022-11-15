@@ -183,7 +183,9 @@ require("./routes")(
   writeDataToFile,
   findSteamLogos,
   downloadSteamImage,
-  shell
+  shell,
+  FS,
+  PATH
 );
 
 /************************

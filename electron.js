@@ -41,7 +41,7 @@ function createWindow() {
 
   mainWindow.loadURL(`http://localhost:3569/`);
   // mainWindow.webContents.openDevTools();
-  // mainWindow.webContents.openDevTools({ mode: "attach" });
+  //mainWindow.webContents.openDevTools({ mode: "dettach" });
 
   mainWindow.on("close", (event) => {
     mainWindow = null;

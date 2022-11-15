@@ -1,71 +1,16 @@
 extends ./partials/base
 
 block body
-    div#addNewBtn-root
-        if installedArr.length == 0 && playLaterArr.length == 0 && wishlistArr.length == 0
-            h1.addNewGameDataHeader Add Some Games
-            button(id="addNewGame" class="addNewGame addNewGameNoData") 
-                img(id="addNewGame__img" class="addNewGame__img" src=`img/new_game.png` alt=`Add a New Game`)
-        else
-            button#addNewGame.addNewGame
-                img(id="addNewGame__img" class="addNewGame__img" src=`img/new_game.png` alt=`Add a New Game`)    
-    div#blackOverlay-root
-        div(id="blackOverlay" class="blackOverlay hide")
-    div#modal-root.modal-root
-        div#uploadModalNewGame.uploadModalNewGame
-            button(id="uploadModalNewGame_inputs__closeBtn" class="uploadModalNewGame_inputs__closeBtn") 
-                img(id="uploadModalNewGame_inputs__closeBtn__img" class="uploadModalNewGame_inputs__closeBtn__img" src=`img/new_game.png` alt=`Close Form`)            
-            div#uploadModalNewGame_playOrEdit.uploadModalNewGame_playOrEdit
-                h2(id="uploadModalNewGame_playOrEdit_header" class="uploadModalNewGame_playOrEdit_header") Play or Edit
-                button#uploadModalNewGame_playOrEdit_play.uploadModalNewGame_playOrEdit_play 
-                button#uploadModalNewGame_playOrEdit_edit.uploadModalNewGame_playOrEdit_edit Edit
-            form(id="uploadModalNewGame_form" class="uploadModalNewGame_form" method="POST" action="/uploadGame" enctype="multipart/form-data")
-                div.uploadModalNewGame_inputs
-                    h2(id="uploadModalNewGame_inputs_header" class="uploadModalNewGame_inputs_header") Add New Game
-                    label(class="uploadModalNewGame_inputs_name" for="uploadModalNewGame_inputs_nameTxt") Name
-                    input(id="uploadModalNewGame_inputs_nameTxt" class="uploadModalNewGame_inputs_nameTxt" type="text" name="name" required)
-                    label(class="uploadModalNewGame_inputs_name" for="uploadModalNewGame_inputs_platformSelectBx") Platform
-                    select(id="uploadModalNewGame_inputs_platformSelectBx" class="uploadModalNewGame_inputs_platformSelectBx" name="platform" required)
-                        each item in PLATFORMS
-                            option(value=`${item}`) #{item}
-                    label(class="uploadModalNewGame_inputs_name" for="uploadModalNewGame_inputs_categorySelectBx") Category
-                    select(id="uploadModalNewGame_inputs_categorySelectBx" class="uploadModalNewGame_inputs_categorySelectBx" name="category" required)
-                        each item in CATEGORY
-                            option(value=`${item}`) #{item}
-                    div#uploadModalNewGame_inputs_chooseCoverArt.uploadModalNewGame_inputs_chooseCoverArt
-                        button#uploadModalNewGame_inputs_logosSearchBtn.uploadModalNewGame_inputs_logosSearchBtn Search for Cover
-                        div#uploadModalNewGame_inputs_logos.uploadModalNewGame_inputs_logos
-                        button#uploadModalNewGame_inputs_styledFileBtn.uploadModalNewGame_inputs_styledFileBtn Upload Cover
-                        input(id="uploadModalNewGame_inputs_fileBtn" class="uploadModalNewGame_inputs_fileBtn" type="file" name="newGameImage")
-                    div#uploadModalNewGame_inputs_appPath.uploadModalNewGame_inputs_appPath
-                        label(class="uploadModalNewGame_inputs_appPath_name" for="uploadModalNewGame_inputs_appPath_nameTxt") App Location
-                        div#uploadModalNewGame_inputs_appPath_div.uploadModalNewGame_inputs_appPath_div
-                            input(id="uploadModalNewGame_inputs_appPath_nameTxt" class="uploadModalNewGame_inputs_appPath_nameTxt" type="text" name="path" readonly="readonly")
-                            button#uploadModalNewGame_inputs_appPath_clearBtn.uploadModalNewGame_inputs_appPath_clearBtn Clear
-                        button#uploadModalNewGame_inputs_styledAppPathBtn.uploadModalNewGame_inputs_styledAppPathBtn App Location
-                        input(id="uploadModalNewGame_inputs_appPath_fileBtn" class="uploadModalNewGame_inputs_appPath_fileBtn" type="file")
-                    div#uploadModalNewGame_inputs_editBtns.uploadModalNewGame_inputs_editBtns
-                        button(id="uploadModalNewGame_inputs_editBtns_deleteBtn" class="uploadModalNewGame_inputs_editBtns_deleteBtn" type="submit" value="DELETE") Delete
-                        button(id="uploadModalNewGame_inputs_editBtns_updateBtn" class="uploadModalNewGame_inputs_editBtns_updateBtn" type="submit" value="UPDATE") Update
-                    button(id="uploadBtn" class="uploadBtn" type="submit" value="Upload") Save
-    div#main.main        
-        if installedArr.length > 0            
-            section.installedGame
-                h1.installedGame_header Installed
-                div.installedGame_images
-                    each item in installedArr
-                        button(id=`${item.name}` class="installedGame_image" style=`background: url('${item.imageLocation}') no-repeat; background-size: 100% 100%;')` alt=`${item.name}` title=`${item.platform}` onClick=`openEditModal("${item.name}")`)
-
-        if playLaterArr.length > 0
-            section.playLaterGame
-                h1.playLaterGame_header Play Later
-                div.playLaterGame_images
-                    each item in playLaterArr
-                        button(id=`${item.name}` class="playLaterGame_image" style=`background: url('${item.imageLocation}') no-repeat; background-size: 100% 100%;` alt=`${item.name}` title=`${item.platform}` onClick=`openEditModal("${item.name}")`)
-
-        if wishlistArr.length > 0
-            section.wishlist
-                h1.wishlist_header Wishlist
-                div.wishlist_images
-                    each item in wishlistArr
-                        button(id=`${item.name}` class="wishlist_image" style=`background: url('${item.imageLocation}') no-repeat; background-size: 100% 100%;` alt=`${item.name}` title=`${item.platform}` onClick=`openEditModal("${item.name}")`)
+    menu-btns
+    custom-modal
+    game-section        
+    
+    script. 
+        const DATA = {
+            "dataJson" : !{JSON.stringify(dataJson)},
+            "PLATFORMS" : !{JSON.stringify(PLATFORMS)},
+            "CATEGORY" : !{JSON.stringify(CATEGORY)},
+            "installedArr" : !{JSON.stringify(installedArr)},
+            "playLaterArr" : !{JSON.stringify(playLaterArr)},
+            "wishlistArr" : !{JSON.stringify(wishlistArr)}
+        };
