@@ -9,7 +9,7 @@ class MenuBtns extends HTMLElement {
   data = DATA.dataJson;
 
   // elems
-  customModal_parent = document.getElementsByTagName("custom-modal")[0];
+  customModal_parent = document.querySelector("custom-modal");
   addNewBtn;
   saveJsonBtn;
   searchBtn;

@@ -6,10 +6,10 @@ class customModal extends HTMLElement {
   _shadow = this.attachShadow({ mode: "open" });
 
   // elems
-  gameCard_parent = document.getElementsByTagName("game-section")[0].shadowRoot;
+  gameCard_parent = document.querySelector("game-section").shadowRoot;
 
   // menu buttons
-  menuBtns_parent = document.getElementsByTagName("menu-btns")[0].shadowRoot;
+  menuBtns_parent = document.querySelector("menu-btns").shadowRoot;
   saveMenuBtn_parent = this.menuBtns_parent.getElementById("saveJsonBtn");
   searchMenuBtn_parent = this.menuBtns_parent.getElementById("searchBtn");
   filterMenuBtn_parent = this.menuBtns_parent.getElementById("filterBtn");
@@ -120,6 +120,8 @@ class customModal extends HTMLElement {
         width: 100vw;
         height: 100vh;
         position: fixed;
+        top: 0;
+        left: 0;
         background-color: var(--backdrop-bg, #000);
         display: none;
       }  
@@ -277,7 +279,7 @@ class customModal extends HTMLElement {
 
     // esc button closes modal
     document.addEventListener("keydown", (e) => {
-      let host = document.getElementsByTagName("custom-modal")[0];
+      let host = document.querySelector("custom-modal");
 
       if (e.key == "Escape") {
         if (host.hasAttribute("close")) {

@@ -10,7 +10,7 @@ class GameSection extends HTMLElement {
   headerArr = ["Installed", "Play Later", "Wishlist"];
 
   // elems
-  customModal = document.getElementsByTagName("custom-modal")[0];
+  customModal = document.querySelector("custom-modal");
 
   connectedCallback() {
     this.#render();
