@@ -86,16 +86,14 @@ class EditGame extends customModal {
     this.filePathTxt.value = "";
   }
 
-  #chooseFolder(e) {
+  #chooseFile(e) {
     e.preventDefault();
     this.hiddenFileInput.click();
   }
 
-  #changeFolder(e) {
+  #changeFile(e) {
     if (e.target.files.length > 0) {
-      let ogPath = e.target.files[0].path;
-      let folderPath = ogPath.substring(0, ogPath.lastIndexOf("\\") + 1);
-      this.filePathTxt.value = `${folderPath}`;
+      this.filePathTxt.value = `${e.target.files[0].path}`;
     }
   }
 
@@ -220,13 +218,11 @@ class EditGame extends customModal {
            />
            <button id="clearPathBtn" class="blueBtn clearPathBtn">Clear</button>
          </div>
-         <button id="styledFileBtn" class="blueBtn">Folder Location</button>
+         <button id="styledFileBtn" class="blueBtn">App Location</button>
          <input
            id="hiddenFileInput"
            class="hide"
            type="file"
-           webkitdirectory="true"
-           directory
          />
          <div id="submitBtns" class="submitBtns">
            <button id="deleteBtn" class="redBtn deleteBtn" type="submit">
@@ -263,22 +259,21 @@ class EditGame extends customModal {
     });
 
     // event listeners
-    this.updateBtn.addEventListener("click", this.#updateGame.bind(this));
-    this.deleteBtn.addEventListener("click", this.#deleteGame.bind(this));
-    this.clearPathBtn.addEventListener("click", this.#clearPath.bind(this));
-    this.styledFileBtn.addEventListener("click", this.#chooseFolder.bind(this));
-    this.hiddenFileInput.addEventListener(
-      "change",
-      this.#changeFolder.bind(this)
-    );
+    this.updateBtn.onclick = (e) => this.#updateGame(e);
+    this.deleteBtn.onclick = (e) => this.#deleteGame(e);
+    this.clearPathBtn.onclick = (e) => this.#clearPath(e);
+    this.styledFileBtn.onclick = (e) => this.#chooseFile(e);
+    this.hiddenFileInput.onchange = (e) => this.#changeFile(e);
+    this.nameTxt.onkeydown = () => {
+      this.nameTxt.classList.remove("error");
+    };
+
+    // custom event listeners
     this.playGame.addEventListener(
       "showEditForm",
       this.#hidePlayGame.bind(this)
     );
     this.playGame.addEventListener("closeModal", this.#closeModal.bind(this));
-    this.nameTxt.addEventListener("keydown", () => {
-      this.nameTxt.classList.remove("error");
-    });
   }
 }
 

@@ -116,11 +116,8 @@ class filterForm extends customModal {
     });
 
     // event listeners
-    this.filterBtn.addEventListener("click", this.#filterGames.bind(this));
-    this.clearFilterBtn.addEventListener(
-      "click",
-      this.#clearFilters.bind(this)
-    );
+    this.filterBtn.onclick = () => this.#filterGames();
+    this.clearFilterBtn.onclick = () => this.#clearFilters();
   }
 }
 

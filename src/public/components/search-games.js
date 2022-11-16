@@ -124,9 +124,9 @@ class SearchGames extends customModal {
     });
 
     // event listeners
-    this.datalistInput.addEventListener("keydown", this.#keydown.bind(this));
-    this.searchBtn.addEventListener("click", this.#search.bind(this));
-    this.clearSearchBtn.addEventListener("click", this.#clearSearch.bind(this));
+    this.datalistInput.onkeydown = (e) => this.#keydown(e);
+    this.clearSearchBtn.onclick = (e) => this.#clearSearch(e);
+    this.searchBtn.onclick = (e) => this.#search(e);
   }
 }
 

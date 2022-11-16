@@ -65,7 +65,7 @@ class GameCard extends GameSection {
     this.gameImage = this.shadowRoot.querySelector(".gameImage");
 
     // event handlers
-    this.gameImage.addEventListener("click", this.#openEditModal.bind(this));
+    this.gameImage.onclick = () => this.#openEditModal();
   }
 }
 

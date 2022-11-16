@@ -268,17 +268,11 @@ class customModal extends HTMLElement {
     this.addGame = this.shadowRoot.querySelector("add-game");
 
     // event handlers
-    closeBtn.addEventListener("click", this.#closeBtn.bind(this));
-    backdrop.addEventListener("click", this.#closeBtn.bind(this));
-
-    this.filterGames.addEventListener("closeModal", this.#closeBtn.bind(this));
-    this.searchGames.addEventListener("closeModal", this.#closeBtn.bind(this));
-    this.saveData.addEventListener("closeModal", this.#closeBtn.bind(this));
-    this.editGame.addEventListener("closeModal", this.#closeBtn.bind(this));
-    this.addGame.addEventListener("closeModal", this.#closeBtn.bind(this));
+    closeBtn.onclick = () => this.#closeBtn();
+    backdrop.onclick = () => this.#closeBtn();
 
     // esc button closes modal
-    document.addEventListener("keydown", (e) => {
+    document.onkeydown = (e) => {
       let host = document.querySelector("custom-modal");
 
       if (e.key == "Escape") {
@@ -288,7 +282,14 @@ class customModal extends HTMLElement {
           host.setAttribute("close", "");
         }
       }
-    });
+    };
+
+    // custom event listeners
+    this.filterGames.addEventListener("closeModal", this.#closeBtn.bind(this));
+    this.searchGames.addEventListener("closeModal", this.#closeBtn.bind(this));
+    this.saveData.addEventListener("closeModal", this.#closeBtn.bind(this));
+    this.editGame.addEventListener("closeModal", this.#closeBtn.bind(this));
+    this.addGame.addEventListener("closeModal", this.#closeBtn.bind(this));
   }
 }
 

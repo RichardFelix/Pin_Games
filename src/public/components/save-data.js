@@ -130,13 +130,10 @@ class SaveData extends customModal {
     this.saveJsonBtn = this.shadowRoot.getElementById("saveJsonBtn");
 
     // event listeners
-    this.clearPathBtn.addEventListener("click", this.#clearPath.bind(this));
-    this.styledFileBtn.addEventListener("click", this.#chooseFolder.bind(this));
-    this.hiddenFileInput.addEventListener(
-      "change",
-      this.#changeFolder.bind(this)
-    );
-    this.saveJsonBtn.addEventListener("click", this.#saveData.bind(this));
+    this.clearPathBtn.onclick = (e) => this.#clearPath(e);
+    this.styledFileBtn.onclick = (e) => this.#chooseFolder(e);
+    this.hiddenFileInput.onchange = (e) => this.#changeFolder(e);
+    this.saveJsonBtn.onclick = (e) => this.#saveData(e);
   }
 }
 

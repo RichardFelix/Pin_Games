@@ -143,23 +143,23 @@ class MenuBtns extends HTMLElement {
       this.addNewBtn = this.shadowRoot.getElementById("addNewBtn");
 
       // event listeners
-      this.hamburgerBtn.addEventListener("click", this.#openMenu.bind(this));
+      this.hamburgerBtn.onclick = () => this.#openMenu();
 
-      this.saveJsonBtn.addEventListener("click", () => {
+      this.saveJsonBtn.onclick = () => {
         this.customModal_parent.setAttribute("open", "saveData");
-      });
+      };
 
-      this.filterBtn.addEventListener("click", () => {
+      this.filterBtn.onclick = () => {
         this.customModal_parent.setAttribute("open", "filter");
-      });
+      };
 
-      this.searchBtn.addEventListener("click", () => {
+      this.searchBtn.onclick = () => {
         this.customModal_parent.setAttribute("open", "search");
-      });
+      };
 
-      this.addNewBtn.addEventListener("click", () => {
+      this.addNewBtn.onclick = () => {
         this.customModal_parent.setAttribute("open", "addGame");
-      });
+      };
     } else {
       let menuHTML = `
         <h1>Add Some Games</h1>
@@ -179,9 +179,9 @@ class MenuBtns extends HTMLElement {
         this.shadowRoot.getElementById("addNewGameNoData");
 
       // event listeners
-      this.addNewGameNoData.addEventListener("click", () => {
+      this.addNewGameNoData.onclick = () => {
         this.customModal_parent.setAttribute("open", "addGame");
-      });
+      };
     }
   }
 }

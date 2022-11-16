@@ -482,31 +482,20 @@ class AddGame extends customModal {
     });
 
     // event listeners
-    this.nameTxt.addEventListener("keydown", () => {
+    this.nameTxt.onkeydown = () => {
       this.nameTxt.classList.remove("error");
-    });
+    };
 
     // app path event listerners
-    this.clearPathBtn.addEventListener("click", this.#clearPath.bind(this));
-    this.styledFileBtn.addEventListener("click", this.#chooseFile.bind(this));
-    this.hiddenFileInput.addEventListener(
-      "change",
-      this.#changeFile.bind(this)
-    );
+    this.clearPathBtn.onclick = (e) => this.#clearPath(e);
+    this.styledFileBtn.onclick = (e) => this.#chooseFile(e);
+    this.hiddenFileInput.onchange = (e) => this.#changeFile(e);
 
     // logo event lisenters
-    this.searchForCoverBtn.addEventListener(
-      "click",
-      this.#searchForLogos.bind(this)
-    );
-    this.styledUploadCoverBtn.addEventListener(
-      "click",
-      this.#uploadCover.bind(this)
-    );
-    this.hiddenUploadCoverInput.addEventListener(
-      "change",
-      this.#showCoverTxt.bind(this)
-    );
+    this.searchForCoverBtn.onclick = (e) => this.#searchForLogos(e);
+    this.styledUploadCoverBtn.onclick = (e) => this.#uploadCover(e);
+    this.hiddenUploadCoverInput.onchange = (e) => this.#showCoverTxt(e);
+
     this.leftArrowBtn.addEventListener("click", (e) => {
       e.preventDefault();
 
@@ -528,7 +517,7 @@ class AddGame extends customModal {
     });
 
     // save button
-    this.saveBtn.addEventListener("click", this.#saveBtnClick.bind(this));
+    this.saveBtn.onclick = (e) => this.#saveBtnClick(e);
   }
 }
 

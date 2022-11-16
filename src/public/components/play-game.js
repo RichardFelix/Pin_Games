@@ -107,8 +107,8 @@ class PlayGame extends EditGame {
     this.editBtn = this.shadowRoot.getElementById("editBtn");
 
     // event listeners
-    this.playBtn.addEventListener("click", this.#pressPlayBtn.bind(this));
-    this.editBtn.addEventListener("click", this.#showEditForm.bind(this));
+    this.playBtn.onclick = () => this.#pressPlayBtn();
+    this.editBtn.onclick = () => this.#showEditForm();
   }
 }
 
