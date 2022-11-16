@@ -1,6 +1,6 @@
 # Summary
 
-Launch and catalog your games. All in one place as it should be :-). Catalog your games you have installed, want to play later and are on your wishlist. Also stores what launcher game is connected to, so you will never forget again ;-).  Also added filter, save data, search functionality and complete front-end rewrite using JS Web Componenets in v2.0.0 release!!  
+Launch and catalog your games. All in one place as it should be :-). Catalog your games you have installed, want to play later and are on your wishlist. Also stores what launcher game is connected to, so you will never forget again ;-).  Also added filter, save data, search functionality and complete front-end rewrite using JS Web Components in v2.0.0 release!!  
 
 ![App with a bunch of games added](https://github.com/RichardFelix/Pin_Games/blob/main/ReadME_images/default.png?raw=true)
 
