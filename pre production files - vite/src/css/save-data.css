@@ -1,0 +1,20 @@
+:host([open]) {
+  display: flex;
+}
+
+.pathDiv {
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.filePathTxt {
+  background-color: #cdd2d7;
+  border: none;
+  padding: 8px;
+}
+
+.clearPathBtn {
+  border-radius: 5px;
+  padding: 8px;
+}

@@ -1,0 +1,46 @@
+:host([open]) {
+  display: flex;
+}
+
+.nameTxt {
+  width: 85%;
+  align-self: center;
+}
+
+.pathDiv {
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.filePathLbl {
+  margin: 15px 0px 0px 0px;
+}
+
+.filePathTxt {
+  background-color: #cdd2d7;
+  border: none;
+  padding: 8px 20px;
+}
+
+.clearPathBtn {
+  border-radius: 5px;
+  padding: 8px;
+}
+
+.submitBtns {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  margin: 20px auto;
+}
+
+.updateBtn {
+  margin: auto;
+}
+
+.deleteBtn,
+.updateBtn {
+  margin: 10px;
+}

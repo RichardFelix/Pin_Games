@@ -1,5 +1,7 @@
-/* WEB components boiler*/
-class SaveData extends customModal {
+import { CustomModal } from "./custom-modal";
+import styles from "../css/save-data.css";
+
+export class SaveData extends CustomModal {
   constructor() {
     super();
   }
@@ -15,33 +17,6 @@ class SaveData extends customModal {
   connectedCallback() {
     this.#render();
   }
-
-  #styles = `
-      <style>    
-        :host([open]){
-            display: flex;
-        }
-
-        ${this.commonStyles}
-
-        .pathDiv{
-            display: flex;
-            align-items: center;
-            margin: 0 auto;
-        }
-        
-        .filePathTxt{
-            background-color: #cdd2d7;
-            border: none;
-            padding: 8px;
-        }
-
-        .clearPathBtn{
-            border-radius: 5px;
-            padding: 8px;
-        }
-      </style>
-  `;
 
   #closeModal() {
     const closeModal = new Event("closeModal");
@@ -94,32 +69,35 @@ class SaveData extends customModal {
 
   #render() {
     this._shadow.innerHTML = `
-       ${this.#styles}
-
-       <form method="POST" action="">
-            <h2 class="header">Backup Data</h2>
-            <label for="filePathTxt"> Folder Location </label>
-            <div id="pathDiv" class="pathDiv">
-                <input
-                id="filePathTxt"
-                class="filePathTxt"
-                type="text"
-                name="path"
-                readonly="readonly"
-                />
-                <button id="clearPathBtn" class="blueBtn clearPathBtn">Clear</button>
-            </div>
-            <button id="styledFileBtn" class="blueBtn">Folder Location</button>
-            <input
-                id="hiddenFileInput"
-                class="hide"
-                type="file"
-                webkitdirectory="true"
-                directory
-            />
-            <button id="saveJsonBtn" class="greenBtn" type="submit">Save</button>
-        </form>
-    `;
+        <style>    
+            ${styles}
+            ${this.commonStyles}
+        </style>
+  
+         <form method="POST" action="">
+              <h2 class="header">Backup Data</h2>
+              <label for="filePathTxt"> Folder Location </label>
+              <div id="pathDiv" class="pathDiv">
+                  <input
+                  id="filePathTxt"
+                  class="filePathTxt"
+                  type="text"
+                  name="path"
+                  readonly="readonly"
+                  />
+                  <button id="clearPathBtn" class="blueBtn clearPathBtn">Clear</button>
+              </div>
+              <button id="styledFileBtn" class="blueBtn">Folder Location</button>
+              <input
+                  id="hiddenFileInput"
+                  class="hide"
+                  type="file"
+                  webkitdirectory="true"
+                  directory
+              />
+              <button id="saveJsonBtn" class="greenBtn" type="submit">Save</button>
+          </form>
+      `;
 
     // shadowRoot elements init
     this.pathDiv = this.shadowRoot.getElementById("pathDiv");
@@ -137,4 +115,4 @@ class SaveData extends customModal {
   }
 }
 
-window.customElements.define(`save-data`, SaveData);
+// window.customElements.define(`save-data`, SaveData);

@@ -1,4 +1,7 @@
-class AddGame extends customModal {
+import { CustomModal } from "./custom-modal";
+import styles from "../css/add-game.css";
+
+export class AddGame extends CustomModal {
   constructor() {
     super();
   }
@@ -29,193 +32,43 @@ class AddGame extends customModal {
   hiddenFileInput;
   saveBtn;
   loadingSVG = `<svg width="300" height="120" id="clackers" class="clackers hide">
-  <!-- Left arc path -->
-  <svg>
-    <path id="arc-left-up" fill="none" d="M 90 90 A 90 90 0 0 1 0 0"/>
-  </svg>
-  <!-- Right arc path -->
-  <svg>
-    <path id="arc-right-up" fill="none" d="M 100 90 A 90 90 0 0 0 190 0"/>
-  </svg>
-  
-  <text x="150" y="50" fill="#ffffff" font-family="Helvetica Neue,Helvetica,Arial" font-size="18"
-        text-anchor="middle">
-    L O A D I N G
-  </text>
-  <circle cx="15" cy="15" r="15">
-    <animateMotion dur="1.5s" repeatCount="indefinite"
-      calcMode="linear"
-      keyPoints="0.0;0.19;0.36;0.51;0.64;0.75;0.84;0.91;0.96;0.99;1.0;0.99;0.96;0.91;0.84;0.75;0.64;0.51;0.36;0.19;0.0;0.0;0.05;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0"
-      keyTimes="0.0;0.025;0.05;0.075;0.1;0.125;0.15;0.175;0.2;0.225;0.25;0.275;0.3;0.325;0.35;0.375;0.4;0.425;0.45;0.475;0.5;0.525;0.55;0.575;0.6;0.625;0.65;0.675;0.7;0.725;0.75;0.775;0.8;0.825;0.85;0.875;0.9;0.925;0.95;0.975;1.0">
-      <mpath xlink:href="#arc-left-up"/>
-    </animateMotion>
-  </circle>
-  <circle cx="135" cy="105" r="15" />
-  <circle cx="165" cy="105" r="15" />
-  <circle cx="95" cy="15" r="15">
-    <animateMotion dur="1.5s" repeatCount="indefinite"
-      calcMode="linear"
-      keyPoints="0.0;0.0;0.05;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0.0;0.19;0.36;0.51;0.64;0.75;0.84;0.91;0.96;0.99;1.0;0.99;0.96;0.91;0.84;0.75;0.64;0.51;0.36;0.19;0.0"
-      keyTimes="0.0;0.025;0.05;0.075;0.1;0.125;0.15;0.175;0.2;0.225;0.25;0.275;0.3;0.325;0.35;0.375;0.4;0.425;0.45;0.475;0.5;0.525;0.55;0.575;0.6;0.625;0.65;0.675;0.7;0.725;0.75;0.775;0.8;0.825;0.85;0.875;0.9;0.925;0.95;0.975;1.0">
-      <mpath xlink:href="#arc-right-up"/>
-    </animateMotion>
-  </circle>
-  </svg>
-  `;
+    <!-- Left arc path -->
+    <svg>
+      <path id="arc-left-up" fill="none" d="M 90 90 A 90 90 0 0 1 0 0"/>
+    </svg>
+    <!-- Right arc path -->
+    <svg>
+      <path id="arc-right-up" fill="none" d="M 100 90 A 90 90 0 0 0 190 0"/>
+    </svg>
+    
+    <text x="150" y="50" fill="#ffffff" font-family="Helvetica Neue,Helvetica,Arial" font-size="18"
+          text-anchor="middle">
+      L O A D I N G
+    </text>
+    <circle cx="15" cy="15" r="15">
+      <animateMotion dur="1.5s" repeatCount="indefinite"
+        calcMode="linear"
+        keyPoints="0.0;0.19;0.36;0.51;0.64;0.75;0.84;0.91;0.96;0.99;1.0;0.99;0.96;0.91;0.84;0.75;0.64;0.51;0.36;0.19;0.0;0.0;0.05;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0"
+        keyTimes="0.0;0.025;0.05;0.075;0.1;0.125;0.15;0.175;0.2;0.225;0.25;0.275;0.3;0.325;0.35;0.375;0.4;0.425;0.45;0.475;0.5;0.525;0.55;0.575;0.6;0.625;0.65;0.675;0.7;0.725;0.75;0.775;0.8;0.825;0.85;0.875;0.9;0.925;0.95;0.975;1.0">
+        <mpath xlink:href="#arc-left-up"/>
+      </animateMotion>
+    </circle>
+    <circle cx="135" cy="105" r="15" />
+    <circle cx="165" cy="105" r="15" />
+    <circle cx="95" cy="15" r="15">
+      <animateMotion dur="1.5s" repeatCount="indefinite"
+        calcMode="linear"
+        keyPoints="0.0;0.0;0.05;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0.0;0.19;0.36;0.51;0.64;0.75;0.84;0.91;0.96;0.99;1.0;0.99;0.96;0.91;0.84;0.75;0.64;0.51;0.36;0.19;0.0"
+        keyTimes="0.0;0.025;0.05;0.075;0.1;0.125;0.15;0.175;0.2;0.225;0.25;0.275;0.3;0.325;0.35;0.375;0.4;0.425;0.45;0.475;0.5;0.525;0.55;0.575;0.6;0.625;0.65;0.675;0.7;0.725;0.75;0.775;0.8;0.825;0.85;0.875;0.9;0.925;0.95;0.975;1.0">
+        <mpath xlink:href="#arc-right-up"/>
+      </animateMotion>
+    </circle>
+    </svg>
+    `;
 
   connectedCallback() {
     this.#render();
   }
-
-  #styles = `
-      <style>    
-        :host([open]){
-            display: flex;
-            align-items: center;
-        }
-
-        ${this.commonStyles}
-
-        .displayFlex{
-          display: flex;
-        }
-
-        form{
-          width: 100%;
-        }
-
-        select, 
-        datalist {
-            width: 100%;
-        }
-
-        .nameTxt{
-          width: 88%;
-        }
-
-        .nameTxt,
-        .platformsSelectBx,
-        .categorySelectBx{
-          max-width: 90%;
-          align-self: center;
-        }
-
-        .logoDiv{
-            margin: 10px 0;
-        }
-
-        .pathDiv{
-            display: flex;
-            align-items: center;
-            margin: 0 auto;
-        }
-
-        .filePathLbl{
-            margin: 15px 0px 0px 0px;
-        }
-        
-        .filePathTxt{
-            background-color: #cdd2d7;
-            border: none;
-            padding: 8px 20px;
-        }
-
-        .clearPathBtn{
-            border-radius: 5px;
-            padding: 8px;
-        }        
-
-        h3{
-            color: var(--font-color);
-        }
-
-        button{
-            width: 60%;
-        }
-
-        .coverDiv{
-          display: flex;
-          justify-content: center;
-          align-items: center;
-        }
-
-        .coverTxt{
-          color: #fff;
-          text-transform: uppercase;
-          width: 90%;
-          white-space: nowrap;
-          overflow: hidden;
-          text-overflow: ellipsis;
-        }
-
-        .logoSearchImages{
-          justify-content: center;
-          align-items: center;
-        }
-
-        .logoSearchImgs{
-          width: 95%;
-          border-radius: 20px;
-        }
-
-        .rightArrowBtn,
-        .leftArrowBtn{
-          display: flex;
-          justify-content: center;
-          align-content: center;
-          position: relative;
-          border-radius: 35px;
-          width: 35px;
-          height: 35px;
-          background-color: var(--closeBtn-bg);
-          cursor: pointer;
-          box-shadow: 5px 5px 5px 0px #000;
-          border: none;
-          position: relative;
-          top: -5px;
-        }
-
-        .leftArrowBtn{
-          left: 15px;
-        }
-
-        .rightArrowBtn{
-          left: -15px;
-        }
-
-        .rightArrowBtnImg,
-        .leftArrowBtnImg{
-          height: 100%;
-        }
-        
-        .leftArrowBtnImg{
-          transform: rotate(-180deg);       
-        }
-        
-        .clackers {
-          width: 100%;
-          margin: 0 0 25px 0;
-        }
-        
-        circle:nth-of-type(1) {
-          fill: #ffffff;
-        }
-        circle:nth-of-type(2) {
-          fill: #fcd837;
-        }
-        circle:nth-of-type(3) {
-          fill: #f9a11f;
-        }
-        circle:nth-of-type(4) {
-          fill: #f27c21;
-        }
-      </style>
-  `;
-
-  // #closeModal() {
-  //   const closeModal = new Event("closeModal");
-  //   this.dispatchEvent(closeModal);
-  // }
 
   // app location functions
   #clearPath(e) {
@@ -370,74 +223,78 @@ class AddGame extends customModal {
 
   #render() {
     this._shadow.innerHTML = `
-        ${this.#styles}
+        <style>    
+            ${styles}
+            ${this.commonStyles}
+        </style>
 
-        <form method="POST" action="/uploadGame" enctype="multipart/form-data">
-        <h2 class="header">Add New Game</h2>
-        <label for="nameTxt"> Name </label>
-        <input id="nameTxt" class="nameTxt" type="text" name="name" required/>
-        <label for="platformsSelectBx"> Platform </label>
-        <select id="platformsSelectBx" class="platformsSelectBx" name="platform" required></select>
-        <label for="categorySelectBx"> Category </label>
-        <select id="categorySelectBx" class="categorySelectBx" name="category" required></select>
-        <div id="logoDiv" class="logoDiv">
-            <button id="searchForCoverBtn" class="blueBtn">Search for Cover</button>
-            <div id="coverDiv" class="coverDiv">
-              ${this.loadingSVG}
-              <h3 id="coverTxt" class="coverTxt hide"></h3>
-              <h3 id="noLogoResults" class="noLogoResults">OR</h3>
-              <img
-                  id="logoSearchImgSolo"
-                  class="logoSearchImgs hide" src="" alt=""
-              />
-              <div id="coverArtImagesDiv" class="logoSearchImages hide">
-                <button id="leftArrowBtn" class="leftArrowBtn">
-                  <img
-                    id="leftArrowBtnImg"
-                    class="leftArrowBtnImg"
-                    src="img/arrow.png"
-                    alt="Go to Previous Cover Image"
-                  />
-                </button>
-                <img id="logoSearchImgs" class="logoSearchImgs" src="" alt="" />
-                <button id="rightArrowBtn" class="rightArrowBtn">
-                  <img
-                    id="rightArrowBtnImg"
-                    class="rightArrowBtnImg"
-                    src="img/arrow.png"
-                    alt="Go to Next Cover Image"
-                  />
-                </button>   
+  
+          <form method="POST" action="/uploadGame" enctype="multipart/form-data">
+          <h2 class="header">Add New Game</h2>
+          <label for="nameTxt"> Name </label>
+          <input id="nameTxt" class="nameTxt" type="text" name="name" required/>
+          <label for="platformsSelectBx"> Platform </label>
+          <select id="platformsSelectBx" class="platformsSelectBx" name="platform" required></select>
+          <label for="categorySelectBx"> Category </label>
+          <select id="categorySelectBx" class="categorySelectBx" name="category" required></select>
+          <div id="logoDiv" class="logoDiv">
+              <button id="searchForCoverBtn" class="blueBtn">Search for Cover</button>
+              <div id="coverDiv" class="coverDiv">
+                ${this.loadingSVG}
+                <h3 id="coverTxt" class="coverTxt hide"></h3>
+                <h3 id="noLogoResults" class="noLogoResults">OR</h3>
+                <img
+                    id="logoSearchImgSolo"
+                    class="logoSearchImgs hide" src="" alt=""
+                />
+                <div id="coverArtImagesDiv" class="logoSearchImages hide">
+                  <button id="leftArrowBtn" class="leftArrowBtn">
+                    <img
+                      id="leftArrowBtnImg"
+                      class="leftArrowBtnImg"
+                      src="img/arrow.png"
+                      alt="Go to Previous Cover Image"
+                    />
+                  </button>
+                  <img id="logoSearchImgs" class="logoSearchImgs" src="" alt="" />
+                  <button id="rightArrowBtn" class="rightArrowBtn">
+                    <img
+                      id="rightArrowBtnImg"
+                      class="rightArrowBtnImg"
+                      src="img/arrow.png"
+                      alt="Go to Next Cover Image"
+                    />
+                  </button>   
+                </div>
               </div>
-            </div>
-            <button id="styledUploadCoverBtn" class="blueBtn">Upload Cover</button>
-            <input 
-              id="hiddenUploadCoverInput" 
-              class="hide" 
-              type="file" 
-              name="newGameImage"
+              <button id="styledUploadCoverBtn" class="blueBtn">Upload Cover</button>
+              <input 
+                id="hiddenUploadCoverInput" 
+                class="hide" 
+                type="file" 
+                name="newGameImage"
+              />
+          </div>        
+          <label for="filePathTxt" class="filePathLbl"> App Location </label>
+          <div id="pathDiv" class="pathDiv">
+            <input
+              id="filePathTxt"
+              class="filePathTxt"
+              type="text"
+              name="path"
+              readonly="readonly"
             />
-        </div>        
-        <label for="filePathTxt" class="filePathLbl"> App Location </label>
-        <div id="pathDiv" class="pathDiv">
+            <button id="clearPathBtn" class="blueBtn clearPathBtn">Clear</button>
+          </div>
+          <button id="styledFileBtn" class="blueBtn">App Location</button>
           <input
-            id="filePathTxt"
-            class="filePathTxt"
-            type="text"
-            name="path"
-            readonly="readonly"
+            id="hiddenFileInput"
+            class="hide"
+            type="file"
           />
-          <button id="clearPathBtn" class="blueBtn clearPathBtn">Clear</button>
-        </div>
-        <button id="styledFileBtn" class="blueBtn">App Location</button>
-        <input
-          id="hiddenFileInput"
-          class="hide"
-          type="file"
-        />
-        <button id="saveBtn" class="greenBtn"> Save </button>
-      </form>
-    `;
+          <button id="saveBtn" class="greenBtn"> Save </button>
+        </form>
+      `;
 
     // shadowRoot elements init
     this.form = this.shadowRoot.querySelector("form");
@@ -521,4 +378,4 @@ class AddGame extends customModal {
   }
 }
 
-window.customElements.define(`add-game`, AddGame);
+// window.customElements.define(`add-game`, AddGame);

@@ -1,0 +1,66 @@
+:host {
+  display: none;
+  text-align: center;
+  flex-direction: column;
+  justify-content: center;
+
+  --greenBtn-bg: #008000;
+  --blueBtn-bg: #304fad;
+  --redBtn-bg: #ff0000;
+  --font-color: #fff;
+}
+
+.header {
+  color: var(--font-color);
+  font-size: 1.3em;
+  margin: 15px 0 10px 0;
+  text-shadow: 2px 3px black;
+}
+
+label {
+  color: var(--font-color);
+  margin: 10px;
+}
+
+select,
+datalist {
+  width: 85%;
+  align-self: center;
+}
+
+button {
+  border: none;
+  color: var(--font-color);
+  padding: 10px;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 20px;
+  width: 50%;
+}
+
+.greenBtn {
+  background-color: var(--greenBtn-bg);
+  margin: 25px auto 10px auto;
+}
+
+.blueBtn {
+  background-color: var(--blueBtn-bg);
+  margin: 10px auto;
+}
+
+.redBtn {
+  background-color: var(--redBtn-bg);
+}
+
+.error {
+  border: red 4px solid;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+.hide {
+  display: none;
+}

@@ -1,0 +1,55 @@
+:host {
+  --backdrop-bg: #000000cc;
+  --modal-bg: #789;
+  --closeBtn-bg: #304fad;
+}
+
+:host([open]) .backdrop,
+:host([open]) .modal {
+  display: block;
+}
+
+.backdrop {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: var(--backdrop-bg, #000);
+  display: none;
+}
+
+.modal {
+  width: 300px;
+  position: fixed;
+  top: 45vh;
+  left: 50%;
+  right: 50%;
+  transform: translate(-50%, -50%);
+  border: 1px #333 solid;
+  background-color: var(--modal-bg);
+  box-shadow: 5px 5px 5px 0px #000;
+  border-radius: 10px;
+  display: none;
+}
+
+.closeBtn {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  position: fixed;
+  top: -20px;
+  right: -15px;
+  border-radius: 35px;
+  width: 35px;
+  height: 35px;
+  background-color: var(--closeBtn-bg);
+  cursor: pointer;
+  box-shadow: 5px 5px 5px 0px #000;
+  border: none;
+}
+
+.closeBtnImg {
+  transform: rotate(45deg);
+  height: 100%;
+}

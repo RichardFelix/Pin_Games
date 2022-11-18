@@ -1,4 +1,7 @@
-class EditGame extends customModal {
+import { CustomModal } from "./custom-modal";
+import styles from "../css/edit-game.css";
+
+export class EditGame extends CustomModal {
   constructor() {
     super();
   }
@@ -22,59 +25,6 @@ class EditGame extends customModal {
   connectedCallback() {
     this.#render();
   }
-
-  #styles = `
-      <style>    
-          :host([open]){
-            display: flex;
-          }
-  
-          ${this.commonStyles}
-  
-          .nameTxt{
-            width: 85%;
-            align-self: center;
-          }
-
-          .pathDiv{
-            display: flex;
-            align-items: center;
-            margin: 0 auto;
-          }
-
-          .filePathLbl{
-            margin: 15px 0px 0px 0px;
-          }
-          
-          .filePathTxt{
-            background-color: #cdd2d7;
-            border: none;
-            padding: 8px 20px;
-          }
-
-          .clearPathBtn{
-            border-radius: 5px;
-            padding: 8px;
-          }
-
-          .submitBtns{
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 90%;  
-            margin: 20px auto;
-          }
-
-          .updateBtn{
-            margin: auto;
-          }
-
-          .deleteBtn,
-          .updateBtn{
-            margin: 10px;
-          }
-      </style>
-  `;
 
   #closeModal() {
     const closeModal = new Event("closeModal");
@@ -108,7 +58,7 @@ class EditGame extends customModal {
         path: this.filePathTxt.value,
       };
 
-      await fetch(`/${this.currentGame.id}`, {
+      await fetch(`/${this.currentGame._id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -132,7 +82,7 @@ class EditGame extends customModal {
       category: this.categorySelectBx.value,
     };
 
-    await fetch(`/${this.currentGame.id}`, {
+    await fetch(`/${this.currentGame._id}`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",
@@ -196,44 +146,47 @@ class EditGame extends customModal {
 
   #render() {
     this._shadow.innerHTML = `
-      ${this.#styles}
-
-      <play-game></play-game>         
-      <form method="POST" action="">
-         <h2 class="header">Edit Game</h2>
-         <label for="nameTxt"> Name </label>
-         <input id="nameTxt" class="nameTxt" type="text" name="name" required/>
-         <label for="platformsSelectBx"> Platform </label>
-         <select id="platformsSelectBx" name="platform" required></select>
-         <label for="categorySelectBx"> Category </label>
-         <select id="categorySelectBx" name="category" required></select>
-         <label for="filePathTxt" class="filePathLbl"> App Location </label>
-         <div id="pathDiv" class="pathDiv">
+        <style>    
+            ${styles}
+            ${this.commonStyles}
+        </style>
+  
+        <play-game></play-game>         
+        <form method="POST" action="">
+           <h2 class="header">Edit Game</h2>
+           <label for="nameTxt"> Name </label>
+           <input id="nameTxt" class="nameTxt" type="text" name="name" required/>
+           <label for="platformsSelectBx"> Platform </label>
+           <select id="platformsSelectBx" name="platform" required></select>
+           <label for="categorySelectBx"> Category </label>
+           <select id="categorySelectBx" name="category" required></select>
+           <label for="filePathTxt" class="filePathLbl"> App Location </label>
+           <div id="pathDiv" class="pathDiv">
+             <input
+               id="filePathTxt"
+               class="filePathTxt"
+               type="text"
+               name="path"
+               readonly="readonly"
+             />
+             <button id="clearPathBtn" class="blueBtn clearPathBtn">Clear</button>
+           </div>
+           <button id="styledFileBtn" class="blueBtn">App Location</button>
            <input
-             id="filePathTxt"
-             class="filePathTxt"
-             type="text"
-             name="path"
-             readonly="readonly"
+             id="hiddenFileInput"
+             class="hide"
+             type="file"
            />
-           <button id="clearPathBtn" class="blueBtn clearPathBtn">Clear</button>
-         </div>
-         <button id="styledFileBtn" class="blueBtn">App Location</button>
-         <input
-           id="hiddenFileInput"
-           class="hide"
-           type="file"
-         />
-         <div id="submitBtns" class="submitBtns">
-           <button id="deleteBtn" class="redBtn deleteBtn" type="submit">
-             Delete
-           </button>
-           <button id="updateBtn" class="greenBtn updateBtn" type="submit">
-             Update
-           </button>
-         </div>
-       </form>
-    `;
+           <div id="submitBtns" class="submitBtns">
+             <button id="deleteBtn" class="redBtn deleteBtn" type="submit">
+               Delete
+             </button>
+             <button id="updateBtn" class="greenBtn updateBtn" type="submit">
+               Update
+             </button>
+           </div>
+         </form>
+      `;
 
     // shadowRoot elements init
     this.nameTxt = this.shadowRoot.getElementById("nameTxt");
@@ -277,4 +230,4 @@ class EditGame extends customModal {
   }
 }
 
-window.customElements.define(`edit-game`, EditGame);
+//   window.customElements.define(`edit-game`, EditGame);

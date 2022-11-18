@@ -1,4 +1,7 @@
-class customModal extends HTMLElement {
+import styles from "../css/custom-modal.css";
+import commonStyles from "../css/commonModalStyles.css";
+
+export class CustomModal extends HTMLElement {
   constructor() {
     super();
   }
@@ -30,138 +33,11 @@ class customModal extends HTMLElement {
   addGame;
 
   // common css for forms
-  commonStyles = `
-    :host{
-      display: none;
-      text-align: center;
-      flex-direction: column;
-      justify-content: center;
-
-      --greenBtn-bg: #008000;
-      --blueBtn-bg: #304fad;
-      --redBtn-bg: #ff0000;
-      --font-color: #fff;
-    }
-  
-    .header{
-      color: var(--font-color);
-      font-size: 1.3em;
-      margin: 15px 0 10px 0;
-      text-shadow: 2px 3px black;
-    }
-
-    label{
-      color: var(--font-color);
-      margin: 10px;
-    }
-
-    select,
-    datalist{
-      width: 85%;
-      align-self: center;
-    }
-
-    button{
-      border: none;
-      color: var(--font-color);
-      padding: 10px;
-      font-size: 14px;
-      cursor: pointer;
-      border-radius: 20px;
-      width: 50%;
-    }
-
-    .greenBtn{
-      background-color: var(--greenBtn-bg);
-      margin: 25px auto 10px auto;
-    }
-
-    .blueBtn{
-      background-color: var(--blueBtn-bg);
-      margin: 10px auto;
-    }
-
-    .redBtn{
-      background-color: var(--redBtn-bg);
-    }
-
-    .error {
-      border: red 4px solid;
-    }
-
-    form{
-      display: flex;
-      flex-direction: column;
-    }
-
-    .hide{
-      display: none;
-    }
-  `;
+  commonStyles = `${commonStyles}`;
 
   connectedCallback() {
     this.#render();
   }
-
-  #styles = `
-   <style>
-      :host {
-        --backdrop-bg: #000000cc;
-        --modal-bg : #789;
-        --closeBtn-bg: #304fad;
-      }
-
-      :host([open]) .backdrop,
-      :host([open]) .modal {
-        display: block;
-      }
-    
-      .backdrop {
-        width: 100vw;
-        height: 100vh;
-        position: fixed;
-        top: 0;
-        left: 0;
-        background-color: var(--backdrop-bg, #000);
-        display: none;
-      }  
-      
-      .modal{
-        width: 300px;
-        position: fixed;
-        top: 45vh;
-        left: 50%;
-        right: 50%;
-        transform: translate(-50%, -50%);
-        border: 1px #333 solid;
-        background-color: var(--modal-bg);
-        box-shadow: 5px 5px 5px 0px #000;
-        border-radius: 10px;
-        display: none;
-      }
-
-      .closeBtn{
-        display: flex;
-        justify-content: center;
-        align-content: center;
-        position: fixed;
-        top: -20px;
-        right: -15px;
-        border-radius: 35px;
-        width: 35px;
-        height: 35px;
-        background-color: var(--closeBtn-bg);
-        cursor: pointer;
-        box-shadow: 5px 5px 5px 0px #000;
-        border: none;
-      }
-
-      .closeBtnImg{
-        transform: rotate(45deg);
-        height: 100%;
-      }
-    </style>
-  `;
 
   #closeBtn() {
     if (this.hasAttribute("open")) {
@@ -243,20 +119,22 @@ class customModal extends HTMLElement {
 
   #render() {
     this._shadow.innerHTML = `
-      ${this.#styles}
-
-      <div id="backdrop" class="backdrop"></div>
-      <div class="modal">
-        <button id="closeBtn" class="closeBtn">
-          <img class="closeBtnImg" src="img/new_game.png" alt="Close Form" />
-        </button>
-        <filter-games></filter-games>
-        <search-games></search-games>
-        <save-data></save-data>
-        <edit-game></edit-game>
-        <add-game></add-game>
-      </div>
-    `;
+        <style>
+            ${styles}
+        </style>
+  
+        <div id="backdrop" class="backdrop"></div>
+        <div class="modal">
+          <button id="closeBtn" class="closeBtn">
+            <img class="closeBtnImg" src="img/new_game.png" alt="Close Form" />
+          </button>
+          <filter-games></filter-games>
+          <search-games></search-games>
+          <save-data></save-data>
+          <edit-game></edit-game>
+          <add-game></add-game>
+        </div>
+      `;
 
     // shadowRoot elements init
     let closeBtn = this.shadowRoot.querySelector("#closeBtn");
@@ -293,4 +171,4 @@ class customModal extends HTMLElement {
   }
 }
 
-window.customElements.define(`custom-modal`, customModal);
+// window.customElements.define(`custom-modal`, CustomModal);

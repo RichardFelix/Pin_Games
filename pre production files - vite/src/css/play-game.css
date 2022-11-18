@@ -1,0 +1,14 @@
+:host([open]) {
+  display: flex;
+  align-items: center;
+}
+
+.playBtn {
+  border: none;
+  color: #fff;
+  padding: 10px;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 20px;
+  background-color: transparent;
+}

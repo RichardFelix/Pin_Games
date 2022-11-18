@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite App</title>
+
+    <link rel="stylesheet" href="css/styles.css" />
+    <script>
+      // fake test data for with vite in Google Chrome Browser
+      let DATA = {
+        dataJson: [
+          {
+            _id: "4324324",
+            name: "A Plague Tale - Requiem",
+            imageLocation: "img/A Plague Tale - Requiem.jpg",
+            platform: "Xbox",
+            category: "installed",
+            path: "",
+            date: "1654914307302",
+            __v: 0,
+          },
+        ],
+        PLATFORMS: [
+          "Steam",
+          "EA",
+          "Epic",
+          "Blizzard",
+          "Xbox",
+          "Ubisoft",
+          "GoG",
+          "Nintendo Switch",
+          "Custom Launcher",
+        ],
+        CATEGORY: ["installed", "play_later", "wishlist"],
+        installedArr: [
+          {
+            _id: "62a4309df993764d55482bba",
+            name: "A Plague Tale - Requiem",
+            imageLocation: "img/A Plague Tale - Requiem.jpg",
+            platform: "Xbox",
+            category: "installed",
+            path: "",
+            date: "1654914307302",
+            __v: 0,
+          },
+        ],
+        playLaterArr: [],
+        wishlistArr: [],
+      };
+    </script>
+    <script type="module" src="./app.js" defer></script>
+  </head>
+  <body>
+    <game-section></game-section>
+    <custom-modal></custom-modal>
+    <menu-btns></menu-btns>
+  </body>
+</html>

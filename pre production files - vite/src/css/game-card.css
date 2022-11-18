@@ -1,0 +1,16 @@
+:host([hide]) {
+  display: none;
+}
+
+.gameImage {
+  width: 300px;
+  height: 150px;
+  max-width: 100%;
+  cursor: pointer;
+  border-radius: 20px;
+  margin: 5px;
+}
+
+.gameImage:hover {
+  box-shadow: 2px 4px 10px 4px white;
+}

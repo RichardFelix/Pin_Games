@@ -1,4 +1,7 @@
-class GameCard extends GameSection {
+import styles from "../css/game-card.css";
+import { GameSection } from "./game-section";
+
+export class GameCard extends GameSection {
   constructor() {
     super();
   }
@@ -8,27 +11,6 @@ class GameCard extends GameSection {
   connectedCallback() {
     this.#render();
   }
-
-  #styles = `
-    <style>
-      :host([hide]){
-        display: none;
-      }
-
-      .gameImage {
-        width: 300px;
-        height: 150px;
-        max-width: 100%;
-        cursor: pointer;
-        border-radius: 20px;
-        margin: 5px;
-      }
-
-      .gameImage:hover{
-        box-shadow: 2px 4px 10px 4px white;
-      }
-    </style>
-  `;
 
   #openEditModal() {
     let name = this.getAttribute("id");
@@ -51,15 +33,17 @@ class GameCard extends GameSection {
     let platform = this.getAttribute("platform");
 
     this._shadow.innerHTML = `
-      ${this.#styles}
-      
-      <img
-        class="gameImage"
-        src='${imageLocation}'
-        alt='${name}'
-        title='${platform}'
-      ></img>
-    `;
+        <style>
+            ${styles}
+        </style>
+        
+        <img
+          class="gameImage"
+          src='${imageLocation}'
+          alt='${name}'
+          title='${platform}'
+        ></img>
+      `;
 
     // shadowRoot elements init
     this.gameImage = this.shadowRoot.querySelector(".gameImage");
@@ -69,4 +53,4 @@ class GameCard extends GameSection {
   }
 }
 
-window.customElements.define(`game-card`, GameCard);
+// window.customElements.define(`game-card`, GameCard);

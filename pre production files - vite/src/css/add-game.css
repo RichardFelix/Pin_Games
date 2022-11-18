@@ -1,0 +1,138 @@
+:host([open]) {
+  display: flex;
+  align-items: center;
+}
+
+.displayFlex {
+  display: flex;
+}
+
+form {
+  width: 100%;
+}
+
+select,
+datalist {
+  width: 100%;
+}
+
+.nameTxt {
+  width: 88%;
+}
+
+.nameTxt,
+.platformsSelectBx,
+.categorySelectBx {
+  max-width: 90%;
+  align-self: center;
+}
+
+.logoDiv {
+  margin: 10px 0;
+}
+
+.pathDiv {
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.filePathLbl {
+  margin: 15px 0px 0px 0px;
+}
+
+.filePathTxt {
+  background-color: #cdd2d7;
+  border: none;
+  padding: 8px 20px;
+}
+
+.clearPathBtn {
+  border-radius: 5px;
+  padding: 8px;
+}
+
+h3 {
+  color: var(--font-color);
+}
+
+button {
+  width: 60%;
+}
+
+.coverDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.coverTxt {
+  color: #fff;
+  text-transform: uppercase;
+  width: 90%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.logoSearchImages {
+  justify-content: center;
+  align-items: center;
+}
+
+.logoSearchImgs {
+  width: 95%;
+  border-radius: 20px;
+}
+
+.rightArrowBtn,
+.leftArrowBtn {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  position: relative;
+  border-radius: 35px;
+  width: 35px;
+  height: 35px;
+  background-color: var(--closeBtn-bg);
+  cursor: pointer;
+  box-shadow: 5px 5px 5px 0px #000;
+  border: none;
+  position: relative;
+  top: -5px;
+}
+
+.leftArrowBtn {
+  left: 15px;
+}
+
+.rightArrowBtn {
+  left: -15px;
+}
+
+.rightArrowBtnImg,
+.leftArrowBtnImg {
+  height: 100%;
+}
+
+.leftArrowBtnImg {
+  transform: rotate(-180deg);
+}
+
+.clackers {
+  width: 100%;
+  margin: 0 0 25px 0;
+}
+
+circle:nth-of-type(1) {
+  fill: #ffffff;
+}
+circle:nth-of-type(2) {
+  fill: #fcd837;
+}
+circle:nth-of-type(3) {
+  fill: #f9a11f;
+}
+circle:nth-of-type(4) {
+  fill: #f27c21;
+}

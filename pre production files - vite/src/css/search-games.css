@@ -1,0 +1,7 @@
+:host([open]) {
+  display: flex;
+}
+
+input {
+  margin: 10px;
+}

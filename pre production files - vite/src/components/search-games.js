@@ -1,5 +1,7 @@
-/* WEB components boiler*/
-class SearchGames extends customModal {
+import { CustomModal } from "./custom-modal";
+import styles from "../css/search-games.css";
+
+export class SearchGames extends CustomModal {
   constructor() {
     super();
   }
@@ -13,20 +15,6 @@ class SearchGames extends customModal {
   connectedCallback() {
     this.#render();
   }
-
-  #styles = `
-    <style>    
-      :host([open]){
-        display: flex;
-      }
-
-      ${this.commonStyles}
-
-      input{
-        margin: 10px;
-      }
-    </style>
-`;
 
   #closeModal() {
     const closeModal = new Event("closeModal");
@@ -99,18 +87,22 @@ class SearchGames extends customModal {
 
   #render() {
     this._shadow.innerHTML = `
-     ${this.#styles}
-     <form method="POST" action="">
-        <h2 class="header">Search</h2>
-        <label for="datalistInput"> Search for Games </label>
-        <input id="datalistInput" list="datalistGames" placeholder="" />
-        <datalist id="datalistGames" name="datalist" required></datalist>
-        <button id="searchBtn" class="greenBtn" type="submit" value="Filter">
-          Search
-        </button>
-        <button id="clearSearchBtn" class="blueBtn" disabled>Clear Search</button>
-      </form>
-    `;
+        <style>    
+            ${styles}
+            ${this.commonStyles}
+        </style>
+
+       <form method="POST" action="">
+          <h2 class="header">Search</h2>
+          <label for="datalistInput"> Search for Games </label>
+          <input id="datalistInput" list="datalistGames" placeholder="" />
+          <datalist id="datalistGames" name="datalist" required></datalist>
+          <button id="searchBtn" class="greenBtn" type="submit" value="Filter">
+            Search
+          </button>
+          <button id="clearSearchBtn" class="blueBtn" disabled>Clear Search</button>
+        </form>
+      `;
 
     // shadowRoot elements init
     this.datalistInput = this.shadowRoot.getElementById("datalistInput");
@@ -130,4 +122,4 @@ class SearchGames extends customModal {
   }
 }
 
-window.customElements.define(`search-games`, SearchGames);
+// window.customElements.define(`search-games`, SearchGames);

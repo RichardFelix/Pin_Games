@@ -1,4 +1,7 @@
-class filterForm extends customModal {
+import { CustomModal } from "./custom-modal";
+import styles from "../css/filter-games.css";
+
+export class FilterForm extends CustomModal {
   constructor() {
     super();
   }
@@ -11,20 +14,6 @@ class filterForm extends customModal {
   connectedCallback() {
     this.#render();
   }
-
-  #styles = `
-    <style>
-      :host([open]){
-        display: flex;
-      }
-
-      ${this.commonStyles}
-
-      .hide{
-        display: none;
-      }
-    </style>
-  `;
 
   #closeModal() {
     const closeModal = new Event("closeModal");
@@ -93,16 +82,19 @@ class filterForm extends customModal {
 
   #render() {
     this._shadow.innerHTML = `
-        ${this.#styles}
-
-        <h2 class="header">Filter</h2>
-        <label for="platformsSelectBx"> Platform </label>
-        <select id="platformsSelectBx" name="platform" required></select>
-        <button id="filterBtn" class="greenBtn" type="submit">
-          Filter
-        </button>
-        <button id="clearFilterBtn" class="blueBtn" disabled>Clear Filter</button>
-      `;
+        <style>    
+            ${styles}
+            ${this.commonStyles}
+        </style>
+  
+          <h2 class="header">Filter</h2>
+          <label for="platformsSelectBx"> Platform </label>
+          <select id="platformsSelectBx" name="platform" required></select>
+          <button id="filterBtn" class="greenBtn" type="submit">
+            Filter
+          </button>
+          <button id="clearFilterBtn" class="blueBtn" disabled>Clear Filter</button>
+        `;
 
     // shadowRoot elements init
     this.clearFilterBtn = this.shadowRoot.getElementById("clearFilterBtn");
@@ -121,4 +113,4 @@ class filterForm extends customModal {
   }
 }
 
-window.customElements.define(`filter-games`, filterForm);
+// window.customElements.define(`filter-games`, filterForm);
