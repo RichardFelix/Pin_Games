@@ -10,6 +10,7 @@ Launch and catalog your games. All in one place as it should be :-). Catalog you
     Express
     Electron
     Pug
+    Vite
     JavaScript (JS Web Componenets)
     HTML
     CSS
