@@ -223,10 +223,10 @@ export class AddGame extends CustomModal {
 
   #render() {
     this._shadow.innerHTML = `
-        <style>    
-            ${styles}
+          <style>    
             ${this.commonStyles}
-        </style>
+            ${styles}
+          </style>
 
   
           <form method="POST" action="/uploadGame" enctype="multipart/form-data">

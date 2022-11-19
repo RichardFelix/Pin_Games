@@ -82,10 +82,10 @@ export class FilterForm extends CustomModal {
 
   #render() {
     this._shadow.innerHTML = `
-        <style>    
-            ${styles}
+          <style>    
             ${this.commonStyles}
-        </style>
+            ${styles}
+          </style>
   
           <h2 class="header">Filter</h2>
           <label for="platformsSelectBx"> Platform </label>

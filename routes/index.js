@@ -65,7 +65,7 @@ module.exports = (
     let filePath = `\\${req.file.originalname}`;
 
     let newData = {
-      id: Math.floor(Math.random() * 1000000),
+      _id: Math.floor(Math.random() * 1000000),
       name: req.body.name,
       imageLocation: filePath,
       platform: req.body.platform,
@@ -101,7 +101,7 @@ module.exports = (
   ************************/
   APP.put("/:id", (req, res) => {
     const newData = {
-      id: Math.floor(Math.random() * 1000000),
+      _id: Math.floor(Math.random() * 1000000),
       name: req.body.name,
       platform: req.body.platform,
       category: req.body.category,
@@ -109,10 +109,10 @@ module.exports = (
     };
 
     newData.imageLocation = data.items.filter((item) => {
-      return item.id === parseInt(req.params.id);
+      return item._id === parseInt(req.params.id);
     })[0].imageLocation;
     data.items = data.items.filter((item) => {
-      return item.id !== parseInt(req.params.id);
+      return item._id !== parseInt(req.params.id);
     });
     data.items.push(newData);
     sortByNameAsc();
@@ -126,7 +126,7 @@ module.exports = (
   ************************/
   APP.delete("/:id", (req, res) => {
     data.items = data.items.filter((item) => {
-      return item.id !== parseInt(req.params.id);
+      return item._id !== parseInt(req.params.id);
     });
     sortByNameAsc();
     writeDataToFile();
@@ -150,7 +150,7 @@ module.exports = (
     let image = await downloadSteamImage(`${req.body.url}`, `${req.body.name}`);
 
     let newData = {
-      id: Math.floor(Math.random() * 1000000),
+      _id: Math.floor(Math.random() * 1000000),
       name: req.body.name,
       imageLocation: `${req.body.name}.jpg`,
       platform: req.body.platform,

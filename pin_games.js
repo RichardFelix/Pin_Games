@@ -50,7 +50,7 @@ try {
 ************************/
 APP.set("view engine", "pug");
 APP.set("views", PATH.join(__dirname + "/src/views"));
-APP.use(EXPRESS.static(PATH.join(__dirname + "/src/public")));
+APP.use(EXPRESS.static(PATH.join(__dirname + "/public")));
 APP.use(EXPRESS.static(USERDATA));
 APP.use(BODY_PARSER.urlencoded({ extended: true }));
 APP.use(BODY_PARSER.json());

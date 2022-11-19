@@ -147,8 +147,8 @@ export class EditGame extends CustomModal {
   #render() {
     this._shadow.innerHTML = `
         <style>    
-            ${styles}
-            ${this.commonStyles}
+          ${this.commonStyles}
+          ${styles}
         </style>
   
         <play-game></play-game>         

@@ -70,8 +70,8 @@ export class SaveData extends CustomModal {
   #render() {
     this._shadow.innerHTML = `
         <style>    
-            ${styles}
-            ${this.commonStyles}
+          ${this.commonStyles}
+          ${styles}
         </style>
   
          <form method="POST" action="">

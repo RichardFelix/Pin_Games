@@ -36,11 +36,11 @@
   margin: 20px auto;
 }
 
-.updateBtn {
-  margin: auto;
-}
-
 .deleteBtn,
 .updateBtn {
   margin: 10px;
+}
+
+.updateBtn {
+  margin: auto;
 }
