@@ -6,7 +6,7 @@
   "configurations": [
     {
       "command": "npm start",
-      "name": "Run npm start",
+      "name": "Github Pin Games",
       "request": "launch",
       "type": "node-terminal"
     }

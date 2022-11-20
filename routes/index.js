@@ -83,18 +83,18 @@ module.exports = (
   /************************
               Read
   ************************/
-  APP.get("/:name", (req, res) => {
-    let game = data.items.filter((item) => {
-      return item.name === req.params.name;
-    });
+  // APP.get("/:name", (req, res) => {
+  //   let game = data.items.filter((item) => {
+  //     return item.name === req.params.name;
+  //   });
 
-    if (game.length > 0) {
-      console.log(`Got Data for ${req.params.name}!!`);
-      res.send(game[0]);
-    } else {
-      console.log(`No item found for ${req.params.name}!!`);
-    }
-  });
+  //   if (game.length > 0) {
+  //     console.log(`Got Data for ${req.params.name}!!`);
+  //     res.send(game[0]);
+  //   } else {
+  //     console.log(`No item found for ${req.params.name}!!`);
+  //   }
+  // });
 
   /************************
             Update
