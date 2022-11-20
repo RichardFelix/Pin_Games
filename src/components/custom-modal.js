@@ -163,11 +163,11 @@ export class CustomModal extends HTMLElement {
     };
 
     // custom event listeners
-    this.filterGames.addEventListener("closeModal", this.#closeBtn.bind(this));
-    this.searchGames.addEventListener("closeModal", this.#closeBtn.bind(this));
-    this.saveData.addEventListener("closeModal", this.#closeBtn.bind(this));
-    this.editGame.addEventListener("closeModal", this.#closeBtn.bind(this));
-    this.addGame.addEventListener("closeModal", this.#closeBtn.bind(this));
+    this.filterGames.addEventListener("closeModal", () => this.#closeModal());
+    this.searchGames.addEventListener("closeModal", () => this.#closeModal());
+    this.saveData.addEventListener("closeModal", () => this.#closeModal());
+    this.editGame.addEventListener("closeModal", () => this.#closeModal());
+    this.addGame.addEventListener("closeModal", () => this.#closeModal());
   }
 }
 

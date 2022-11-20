@@ -147,8 +147,8 @@ export class EditGame extends CustomModal {
   #render() {
     this._shadow.innerHTML = `
         <style>    
-          ${this.commonStyles}
-          ${styles}
+            ${this.commonStyles}
+            ${styles}
         </style>
   
         <play-game></play-game>         
@@ -222,11 +222,8 @@ export class EditGame extends CustomModal {
     };
 
     // custom event listeners
-    this.playGame.addEventListener(
-      "showEditForm",
-      this.#hidePlayGame.bind(this)
-    );
-    this.playGame.addEventListener("closeModal", this.#closeModal.bind(this));
+    this.playGame.addEventListener("showEditForm", () => this.#hidePlayGame());
+    this.playGame.addEventListener("closeModal", () => this.#closeModal());
   }
 }
 
