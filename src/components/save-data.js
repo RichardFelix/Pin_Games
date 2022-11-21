@@ -6,14 +6,6 @@ export class SaveData extends CustomModal {
     super();
   }
 
-  // elems
-  pathDiv;
-  filePathTxt;
-  clearPathBtn;
-  styledFileBtn;
-  hiddenFileInput;
-  saveJsonBtn;
-
   connectedCallback() {
     this.#render();
   }
@@ -70,8 +62,8 @@ export class SaveData extends CustomModal {
   #render() {
     this._shadow.innerHTML = `
         <style>    
-          ${this.commonStyles}
-          ${styles}
+            ${this.commonStyles}
+            ${styles}
         </style>
   
          <form method="POST" action="">

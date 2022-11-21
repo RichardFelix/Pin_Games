@@ -6,22 +6,6 @@ export class EditGame extends CustomModal {
     super();
   }
 
-  // elems
-  nameTxt;
-  platformsSelectBx;
-  categorySelectBx;
-  filePathTxt;
-  clearPathBtn;
-  styledFileBtn;
-  hiddenFileInput;
-  deleteBtn;
-  updateBtn;
-  currentGame;
-  form;
-
-  // custom-elements
-  playGame;
-
   connectedCallback() {
     this.#render();
   }

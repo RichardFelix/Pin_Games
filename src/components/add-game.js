@@ -11,26 +11,6 @@ export class AddGame extends CustomModal {
   searchLogoCounter = 0;
 
   // elems
-  form;
-  nameTxt = "wat";
-  platformsSelectBx;
-  categorySelectBx;
-  logoDiv;
-  searchForCoverBtn;
-  coverDiv;
-  leftArrowBtn;
-  rightArrowBtn;
-  coverArtImagesDiv;
-  coverTxt;
-  logoSearchImgs;
-  logoSearchImgSolo;
-  styledUploadCoverBtn;
-  hiddenUploadCoverInput;
-  filePathTxt;
-  clearPathBtn;
-  styledFileBtn;
-  hiddenFileInput;
-  saveBtn;
   loadingSVG = `<svg width="300" height="120" id="clackers" class="clackers hide">
     <!-- Left arc path -->
     <svg>
@@ -223,10 +203,10 @@ export class AddGame extends CustomModal {
 
   #render() {
     this._shadow.innerHTML = `
-          <style>    
+        <style>    
             ${this.commonStyles}
             ${styles}
-          </style>
+        </style>
 
   
           <form method="POST" action="/uploadGame" enctype="multipart/form-data">

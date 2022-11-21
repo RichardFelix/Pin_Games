@@ -6,10 +6,6 @@ export class PlayGame extends EditGame {
     super();
   }
 
-  // elems
-  playBtn;
-  editBtn;
-
   connectedCallback() {
     this.#render();
   }
@@ -46,10 +42,10 @@ export class PlayGame extends EditGame {
   #render() {
     this._shadow.innerHTML = `
         <style>    
-          ${this.commonStyles}
-          ${styles}
+            ${this.commonStyles}
+            ${styles}
         </style>
-              
+        
           <header id="header" class="header"></header>
           <button id="playBtn" class="playBtn">
           <svg

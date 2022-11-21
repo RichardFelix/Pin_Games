@@ -6,11 +6,6 @@ export class FilterForm extends CustomModal {
     super();
   }
 
-  // elems
-  clearFilterBtn;
-  filterBtn;
-  platformsSelectBx;
-
   connectedCallback() {
     this.#render();
   }
@@ -82,10 +77,10 @@ export class FilterForm extends CustomModal {
 
   #render() {
     this._shadow.innerHTML = `
-          <style>    
+        <style>    
             ${this.commonStyles}
             ${styles}
-          </style>
+        </style>
   
           <h2 class="header">Filter</h2>
           <label for="platformsSelectBx"> Platform </label>

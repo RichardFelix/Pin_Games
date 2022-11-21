@@ -6,12 +6,6 @@ export class SearchGames extends CustomModal {
     super();
   }
 
-  // elems
-  datalistInput;
-  datalistGames;
-  searchBtn;
-  clearSearchBtn;
-
   connectedCallback() {
     this.#render();
   }
@@ -88,8 +82,8 @@ export class SearchGames extends CustomModal {
   #render() {
     this._shadow.innerHTML = `
         <style>    
-            ${styles}
             ${this.commonStyles}
+            ${styles}
         </style>
 
        <form method="POST" action="">

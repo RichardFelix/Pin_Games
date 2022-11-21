@@ -6,8 +6,6 @@ export class GameCard extends GameSection {
     super();
   }
 
-  gameImage;
-
   connectedCallback() {
     this.#render();
   }

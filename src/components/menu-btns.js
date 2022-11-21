@@ -12,11 +12,6 @@ export class MenuBtns extends HTMLElement {
 
   // elems
   customModal_parent = document.querySelector("custom-modal");
-  addNewBtn;
-  saveJsonBtn;
-  searchBtn;
-  filterBtn;
-  hamburgerBtn;
 
   connectedCallback() {
     this.#render();

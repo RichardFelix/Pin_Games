@@ -25,13 +25,6 @@ export class CustomModal extends HTMLElement {
   platforms = DATA.PLATFORMS;
   category = DATA.CATEGORY;
 
-  // custom-elements
-  filterGames;
-  searchGames;
-  saveData;
-  editGame;
-  addGame;
-
   // common css for forms
   commonStyles = `${commonStyles}`;
 
@@ -163,11 +156,11 @@ export class CustomModal extends HTMLElement {
     };
 
     // custom event listeners
-    this.filterGames.addEventListener("closeModal", () => this.#closeModal());
-    this.searchGames.addEventListener("closeModal", () => this.#closeModal());
-    this.saveData.addEventListener("closeModal", () => this.#closeModal());
-    this.editGame.addEventListener("closeModal", () => this.#closeModal());
-    this.addGame.addEventListener("closeModal", () => this.#closeModal());
+    this.filterGames.addEventListener("closeModal", () => this.#closeBtn());
+    this.searchGames.addEventListener("closeModal", () => this.#closeBtn());
+    this.saveData.addEventListener("closeModal", () => this.#closeBtn());
+    this.editGame.addEventListener("closeModal", () => this.#closeBtn());
+    this.addGame.addEventListener("closeModal", () => this.#closeBtn());
   }
 }
 
