@@ -12,5 +12,5 @@
 }
 
 .gameImage:hover {
-  box-shadow: 2px 4px 10px 4px white;
+  box-shadow: 2px 4px 10px 4px hsl(0, 0%, 100%);
 }

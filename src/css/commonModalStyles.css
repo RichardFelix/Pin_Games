@@ -4,17 +4,17 @@
   flex-direction: column;
   justify-content: center;
 
-  --greenBtn-bg: #008000;
-  --blueBtn-bg: #304fad;
-  --redBtn-bg: #ff0000;
-  --font-color: #fff;
+  --greenBtn-bg: hsl(120, 100%, 25%);
+  --blueBtn-bg: hsl(225, 57%, 43%);
+  --redBtn-bg: hsl(0, 100%, 50%);
+  --font-color: hsl(0, 0%, 100%);
 }
 
 .header {
   color: var(--font-color);
   font-size: 1.3em;
   margin: 15px 0 10px 0;
-  text-shadow: 2px 3px black;
+  text-shadow: 2px 3px hsl(0, 0%, 0%);
 }
 
 label {
@@ -53,7 +53,7 @@ button {
 }
 
 .error {
-  border: red 4px solid;
+  border: hsl(0, 100%, 50%) 4px solid;
 }
 
 form {

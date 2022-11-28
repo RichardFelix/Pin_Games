@@ -8,9 +8,9 @@ button {
   border-radius: 100px;
   width: 100px;
   height: 100px;
-  background-color: #304fad;
+  background-color: hsl(225, 57%, 43%);
   cursor: pointer;
-  box-shadow: 5px 5px 5px 0px #000;
+  box-shadow: 5px 5px 5px 0px hsl(0, 0%, 0%);
   border: none;
   transition: 0.5s ease all;
 }
@@ -47,9 +47,9 @@ h1 {
   right: 50%;
   transform: translate(-50%, -50%);
   bottom: 70vh;
-  color: #fff;
+  color: hsl(0, 0%, 100%);
   width: 80vw;
-  text-shadow: 5px 5px black;
+  text-shadow: 5px 5px hsl(0, 0%, 0%);
   font-size: 3em;
 }
 
@@ -61,7 +61,7 @@ h1 {
 }
 
 .activeMenuBtn {
-  background-color: #663399;
+  background-color: hsl(270, 50%, 40%);
 }
 
 .hide {

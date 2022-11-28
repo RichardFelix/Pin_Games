@@ -1,7 +1,7 @@
 :host {
-  --backdrop-bg: #000000cc;
-  --modal-bg: #789;
-  --closeBtn-bg: #304fad;
+  --backdrop-bg: hsla(0, 0%, 0%, 0.8);
+  --modal-bg: hsl(210, 14%, 53%);
+  --closeBtn-bg: hsl(225, 57%, 43%);
 }
 
 :host([open]) .backdrop,
@@ -15,7 +15,7 @@
   position: fixed;
   top: 0;
   left: 0;
-  background-color: var(--backdrop-bg, #000);
+  background-color: var(--backdrop-bg, hsl(0, 0%, 0%));
   display: none;
 }
 
@@ -28,7 +28,7 @@
   transform: translate(-50%, -50%);
   border: 1px #333 solid;
   background-color: var(--modal-bg);
-  box-shadow: 5px 5px 5px 0px #000;
+  box-shadow: 5px 5px 5px 0px hsl(0, 0%, 0%);
   border-radius: 10px;
   display: none;
 }
@@ -45,7 +45,7 @@
   height: 35px;
   background-color: var(--closeBtn-bg);
   cursor: pointer;
-  box-shadow: 5px 5px 5px 0px #000;
+  box-shadow: 5px 5px 5px 0px hsl(0, 0%, 0%);
   border: none;
 }
 
