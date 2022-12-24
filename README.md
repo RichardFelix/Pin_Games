@@ -76,3 +76,8 @@ Windows 10+ \
 # Nerd Info
 
 I orignally created this app as a web app. But was like why not use Electron so I could share with my friends. This app is using a simple JSON read/write file in the user data folder to store game data. Since this app is so small I thought that would be better then packaging SQL lite with app. Or changing config file to add a MongoDB location then use electron builder to create exe file.
+
+# Donate
+If you benefit at all from my work, any donation would help a lot. Thanks!
+
+[![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/donate/?hosted_button_id=C3LN6JBUV3BAC)
